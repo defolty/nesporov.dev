@@ -420,20 +420,22 @@ h2 {
 }
 
 .app-card h3 {
-  margin: 0.8rem 0 0.4rem;
+  margin: 0.8rem 0 0;
 }
 
-.app-card p {
+.app-card p:not(.service-links) {
   margin: 0;
   color: var(--text-dim);
+  min-height: 3.2em;
 }
 
 .app-card .tag-row {
-  margin-top: 0.85rem;
+  margin-top: 0.7rem;
 }
 
 .app-card .card-actions {
   margin-top: auto;
+  padding-top: 0.7rem;
 }
 
 .coming-soon {
@@ -444,10 +446,11 @@ h2 {
 }
 
 .service-links {
-  margin-top: 0.8rem;
+  margin-top: 0.55rem;
   font-size: 0.82rem;
   display: flex;
   gap: 0.9rem;
+  min-height: 1.2rem;
 }
 
 .service-links a {
@@ -540,6 +543,10 @@ textarea {
   font-family: inherit;
 }
 
+textarea {
+  resize: vertical;
+}
+
 input:focus,
 textarea:focus {
   outline: 2px solid rgba(67, 149, 255, 0.6);
@@ -563,6 +570,18 @@ textarea:focus {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.site-footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 
 .reveal {
