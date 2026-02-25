@@ -242,36 +242,52 @@ h1 {
   background: rgba(255, 255, 255, 0.06);
 }
 
-.hero-orb {
+.hero-object {
   position: relative;
   width: min(30rem, 86vw);
   aspect-ratio: 1;
   margin-inline: auto;
+  display: grid;
+  place-items: center;
 }
 
-.orb-core {
+.object-layer {
   position: absolute;
-  inset: 24%;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 30%, #c5e7ff, #3f48ff 45%, #110f28 100%);
-  box-shadow: 0 0 80px rgba(89, 100, 255, 0.4);
-  animation: spin 18s linear infinite;
+  width: 62%;
+  aspect-ratio: 1;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 24px 48px rgba(8, 12, 34, 0.45);
 }
 
-.orb-ring {
+.layer-1 {
+  background: linear-gradient(135deg, rgba(0, 122, 255, 0.36), rgba(88, 86, 214, 0.24));
+  transform: rotate(14deg) translateY(-4%);
+  animation: prismFloatA 8s ease-in-out infinite;
+}
+
+.layer-2 {
+  background: linear-gradient(150deg, rgba(255, 45, 85, 0.28), rgba(0, 122, 255, 0.2));
+  transform: rotate(-8deg) scale(0.88);
+  animation: prismFloatB 7.2s ease-in-out infinite;
+}
+
+.layer-3 {
+  background: linear-gradient(120deg, rgba(45, 226, 230, 0.24), rgba(88, 86, 214, 0.22));
+  transform: rotate(24deg) scale(0.7) translateY(8%);
+  animation: prismFloatC 9s ease-in-out infinite;
+}
+
+.object-glow {
   position: absolute;
-  inset: 0;
+  width: 74%;
+  aspect-ratio: 1;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-}
-
-.ring-1 {
-  animation: spin 14s linear infinite;
-}
-
-.ring-2 {
-  inset: 10%;
-  animation: spinReverse 16s linear infinite;
+  background: radial-gradient(circle, rgba(111, 161, 255, 0.44), rgba(88, 86, 214, 0.14) 55%, transparent 72%);
+  filter: blur(20px);
+  animation: prismGlow 6.5s ease-in-out infinite;
 }
 
 .section {
@@ -351,8 +367,11 @@ h2 {
 
 .app-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   border-radius: 18px;
   padding: 1rem;
+  min-height: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   transform-style: preserve-3d;
 }
@@ -407,6 +426,14 @@ h2 {
 .app-card p {
   margin: 0;
   color: var(--text-dim);
+}
+
+.app-card .tag-row {
+  margin-top: 0.85rem;
+}
+
+.app-card .card-actions {
+  margin-top: auto;
 }
 
 .coming-soon {
@@ -525,6 +552,7 @@ textarea:focus {
   border-radius: 18px;
   padding: 1rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
@@ -533,6 +561,7 @@ textarea:focus {
 
 .site-footer div {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -573,12 +602,42 @@ textarea:focus {
   100% { transform: translate3d(-12%, 10%, 0); }
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+@keyframes prismFloatA {
+  0%, 100% {
+    transform: rotate(14deg) translateY(-4%);
+  }
+  50% {
+    transform: rotate(20deg) translateY(3%);
+  }
 }
 
-@keyframes spinReverse {
-  to { transform: rotate(-360deg); }
+@keyframes prismFloatB {
+  0%, 100% {
+    transform: rotate(-8deg) scale(0.88);
+  }
+  50% {
+    transform: rotate(-14deg) scale(0.93) translateY(-2%);
+  }
+}
+
+@keyframes prismFloatC {
+  0%, 100% {
+    transform: rotate(24deg) scale(0.7) translateY(8%);
+  }
+  50% {
+    transform: rotate(16deg) scale(0.76) translateY(2%);
+  }
+}
+
+@keyframes prismGlow {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.08);
+  }
 }
 
 @keyframes pulse {
