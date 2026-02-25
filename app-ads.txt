@@ -1,0 +1,8 @@
+# Google AdMob
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# Appodeal / BidMachine
+# (add records after receiving them from Appodeal)
+
+# Other ad networks
+# (add when connected)

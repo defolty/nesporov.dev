@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nesporov - ios software engineer</title>
+    <meta
+      name="description"
+      content="iOS developer. Apps for iPhone and Apple Watch in the App Store."
+    />
+    <meta property="og:title" content="Nesporov - iOS Developer" />
+    <meta property="og:description" content="I build apps for iOS and watchOS" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nesporov.dev" />
+    <meta property="og:image" content="https://nesporov.dev/og-image.svg" />
+    <meta name="theme-color" content="#0a0a0f" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="background-blobs" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+      <span class="blob blob-4"></span>
+      <span class="grid-overlay"></span>
+    </div>
+
+    <header class="site-header" id="top">
+      <nav class="nav glass" aria-label="Primary navigation">
+        <a class="brand" href="#top">Nesporov</a>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="menuPanel">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="menuPanel">
+          <a href="#about">About</a>
+          <a href="#projects">Apps</a>
+          <a href="#tech">Tech</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-content glass reveal" data-delay="0">
+          <p class="eyebrow">Mobile Development / iOS / watchOS</p>
+          <h1>Nikita Nesporov</h1>
+          <p class="subtitle" id="typeTarget" aria-live="polite"></p>
+          <p class="hero-description">
+            Independent iOS engineer focused on clean architecture, smooth UX, and production-ready apps for Apple platforms.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">My Apps</a>
+            <a class="btn btn-secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="hero-orb reveal" data-delay="150" aria-hidden="true">
+          <div class="orb-core"></div>
+          <div class="orb-ring ring-1"></div>
+          <div class="orb-ring ring-2"></div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-inner glass reveal" data-delay="0">
+          <h2>About</h2>
+          <div class="about-layout">
+            <div class="avatar" aria-hidden="true"><span>NN</span></div>
+            <div>
+              <p class="about-text">swift, uikit, sui</p>
+              <div class="skill-tags">
+                <span class="pill">Swift</span>
+                <span class="pill">UIKit</span>
+                <span class="pill">SwiftUI</span>
+                <span class="pill">watchOS</span>
+                <span class="pill">Xcode</span>
+                <span class="pill">Git</span>
+                <span class="pill">Firebase</span>
+                <span class="pill">RevenueCat</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="section-head reveal" data-delay="0">
+          <h2>Apps</h2>
+          <p>Products built for iPhone and Apple Watch.</p>
+        </div>
+        <div class="cards-grid">
+          <!-- TODO: Calendarity - replace with full internal card if needed in the future -->
+          <article class="app-card glass app-card-external reveal tilt-card" data-delay="0">
+            <div class="app-icon" aria-hidden="true">📅</div>
+            <div class="external-badge">Own Website</div>
+            <h3>Calendarity <span class="ext-arrow">↗</span></h3>
+            <p>Calendar app with advanced planning capabilities.</p>
+            <div class="tag-row">
+              <span>iOS</span><span>Productivity</span><span>Calendar</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://calendarity.app" target="_blank" rel="noopener noreferrer">Open Website</a>
+              <a class="btn btn-ghost" href="https://apps.apple.com/us/app/calendarity/id6747371890" target="_blank" rel="noopener noreferrer">App Store</a>
+            </div>
+          </article>
+
+          <article class="app-card glass reveal tilt-card" data-delay="120">
+            <div class="app-icon" aria-hidden="true">🔊</div>
+            <h3>Bassport</h3>
+            <p>Car audio utility to calculate bass ports and tune sound in your vehicle.</p>
+            <div class="tag-row">
+              <span>iOS</span><span>Audio</span><span>Utility</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="#" aria-label="Bassport App Store placeholder">App Store</a>
+            </div>
+            <p class="service-links">
+              <a href="/apps/bassport-pro/privacy-policy.html">Privacy Policy</a>
+              <a href="/apps/bassport-pro/support.html">Support</a>
+            </p>
+          </article>
+
+          <article class="app-card glass reveal tilt-card" data-delay="240">
+            <div class="app-icon" aria-hidden="true">⌚</div>
+            <span class="coming-soon">In Development</span>
+            <h3>SlowDown</h3>
+            <p>watchOS app for walking pace control with gentle haptic guidance.</p>
+            <div class="tag-row">
+              <span>watchOS</span><span>Health</span><span>Haptics</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="#" aria-label="SlowDown App Store placeholder">App Store</a>
+            </div>
+            <p class="service-links">
+              <a href="/apps/slowdown/privacy-policy.html">Privacy Policy</a>
+              <a href="/apps/slowdown/support.html">Support</a>
+            </p>
+          </article>
+
+          <article class="app-card glass reveal tilt-card" data-delay="360">
+            <div class="app-icon" aria-hidden="true">🗓️</div>
+            <h3>Calendar Workdays</h3>
+            <p>Convenient workdays calendar for tracking shifts and planning schedules.</p>
+            <div class="tag-row">
+              <span>iOS</span><span>Productivity</span><span>Calendar</span>
+            </div>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://apps.apple.com/us/app/calendar-workdays/id6475014070" target="_blank" rel="noopener noreferrer">App Store</a>
+            </div>
+            <p class="service-links">
+              <a href="/apps/calendar-workdays/privacy-policy.html">Privacy Policy</a>
+              <a href="/apps/calendar-workdays/support.html">Support</a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="tech">
+        <div class="section-head reveal" data-delay="0">
+          <h2>Tech Stack</h2>
+          <p>Architecture, tools, and services I use in production.</p>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-item glass reveal" data-delay="0">VIPER</div>
+          <div class="tech-item glass reveal" data-delay="80">Tuist</div>
+          <div class="tech-item glass reveal" data-delay="160">Swift</div>
+          <div class="tech-item glass reveal" data-delay="240">UIKit</div>
+          <div class="tech-item glass reveal" data-delay="320">SwiftUI</div>
+          <div class="tech-item glass reveal" data-delay="400">watchOS</div>
+          <div class="tech-item glass reveal" data-delay="480">Xcode</div>
+          <div class="tech-item glass reveal" data-delay="560">Git</div>
+          <div class="tech-item glass reveal" data-delay="640">Firebase</div>
+          <div class="tech-item glass reveal" data-delay="720">RevenueCat</div>
+          <div class="tech-item glass reveal" data-delay="800">Appodeal</div>
+          <div class="tech-item glass reveal" data-delay="880">StoreKit</div>
+          <div class="tech-item glass reveal" data-delay="960">GSAP</div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-inner glass contact-card reveal" data-delay="0">
+          <h2>Contact</h2>
+          <p>Open for product work, consulting, and app collaborations.</p>
+          <div class="contact-links">
+            <a class="contact-link linkedin" href="https://linkedin.com/in/nikitanesporov" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="contact-link telegram" href="http://t.me/nikitanesporov/" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a class="contact-link email" href="mailto:main@nesporov.dev">main@nesporov.dev</a>
+            <a class="contact-link github" href="https://github.com/defolty" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+
+          <form class="contact-form" action="mailto:main@nesporov.dev" method="post" enctype="text/plain">
+            <label>
+              Name
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer glass">
+      <p>© 2026 Nesporov. Built with ❤️ and Swift.</p>
+      <div>
+        <a href="https://linkedin.com/in/nikitanesporov" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="http://t.me/nikitanesporov/" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://github.com/defolty" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
