@@ -126,18 +126,17 @@ function initHeroIconQueue() {
 
     queue.forEach((item, depth) => {
       const t = depth / maxDepth;
-
-      const size = 82 + t * 86; // front small -> back large
-      const x = -32 + t * 66; // back shifts right
-      const y = -28 + t * 58; // back shifts down
-      const rotate = -72 + t * 24; // pronounced stacked angles (~45..90 visual range)
-      const opacity = 0.94 - t * 0.08;
+      const angle = -45 + t * 90; // evenly distributed fan: -45..+45
+      const size = 96 + t * 86; // front small -> back large
+      const x = -20 + t * 40; // gentle fan spread
+      const y = -8 + t * 16;
+      const opacity = 0.96 - t * 0.1;
 
       item.style.width = `${size}px`;
       item.style.height = `${size}px`;
       item.style.opacity = `${opacity}`;
       item.style.zIndex = String(total - depth);
-      item.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${rotate}deg)`;
+      item.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${angle}deg)`;
 
       item.classList.toggle('is-front', depth === 0);
     });
@@ -147,12 +146,23 @@ function initHeroIconQueue() {
 
   if (prefersReducedMotion || queue.length < 2) return;
 
+  const cycleDuration = 2400;
   const cycle = () => {
+    const leavingFront = queue[0];
+    if (leavingFront) {
+      leavingFront.classList.remove('is-cycling');
+      void leavingFront.offsetWidth;
+      leavingFront.classList.add('is-cycling');
+      window.setTimeout(() => {
+        leavingFront.classList.remove('is-cycling');
+      }, cycleDuration);
+    }
+
     queue = [...queue.slice(1), queue[0]];
     applyQueueLayout();
   };
 
-  window.setInterval(cycle, 2400);
+  window.setInterval(cycle, cycleDuration);
 }
 
 initHeroIconQueue();

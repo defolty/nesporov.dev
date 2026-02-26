@@ -377,8 +377,8 @@ h1 {
 
 .hero-icon-stack {
   position: relative;
-  width: min(72%, 320px);
-  height: min(72%, 320px);
+  width: min(76%, 340px);
+  height: min(76%, 340px);
 }
 
 .hero-stack-item {
@@ -400,9 +400,9 @@ h1 {
     width 2400ms ease-in-out,
     height 2400ms ease-in-out,
     transform 2400ms ease-in-out,
-    opacity 1200ms ease-in-out,
-    box-shadow 1200ms ease-in-out,
-    border-color 1200ms ease-in-out;
+    opacity 2400ms ease-in-out,
+    box-shadow 1400ms ease-in-out,
+    border-color 1400ms ease-in-out;
 }
 
 .hero-stack-item img {
@@ -413,7 +413,7 @@ h1 {
   object-fit: cover;
   border-radius: 16px;
   transform-origin: center center;
-  transition: transform 2400ms ease-in-out, filter 900ms ease-in-out, opacity 900ms ease-in-out;
+  transition: transform 2400ms ease-in-out, filter 1200ms ease-in-out, opacity 1200ms ease-in-out;
 }
 
 .hero-stack-item.is-front {
@@ -421,22 +421,31 @@ h1 {
   box-shadow: 0 20px 34px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.05), var(--specular);
 }
 
-.hero-stack-item.is-front img {
+.hero-stack-item.is-cycling {
+  z-index: 999 !important;
+  border-color: rgba(255, 255, 255, 0.26);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.34), 0 0 0 1px rgba(255, 255, 255, 0.07), var(--specular);
+}
+
+.hero-stack-item.is-cycling img {
   animation: heroStackLead 2400ms ease-in-out;
 }
 
 @keyframes heroStackLead {
   0% {
-    transform: scale(0.96) rotate(-4deg);
+    transform: scale(0.6) rotate(45deg);
   }
-  45% {
-    transform: scale(1.02) rotate(0deg);
+  38% {
+    transform: scale(1.1) rotate(16deg);
   }
-  75% {
-    transform: scale(1.03) rotate(2deg);
+  52% {
+    transform: scale(1.03) rotate(5deg);
+  }
+  66% {
+    transform: scale(1.06) rotate(0deg);
   }
   100% {
-    transform: scale(0.98) rotate(4deg);
+    transform: scale(1) rotate(0deg);
   }
 }
 
