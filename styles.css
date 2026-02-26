@@ -455,8 +455,8 @@ h2 {
 .about-layout {
   display: grid;
   grid-template-columns: 148px 1fr;
-  gap: 1rem;
-  align-items: center;
+  gap: 1rem 1.1rem;
+  align-items: start;
 }
 
 .avatar {
@@ -480,6 +480,37 @@ h2 {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.about-profile {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.about-role {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.about-highlights {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--text-secondary);
+  display: grid;
+  gap: 0.36rem;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.about-footnote {
+  margin: 0;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 .skill-tags,
@@ -580,6 +611,20 @@ h2 {
   object-fit: cover;
   border-radius: calc(var(--radius-md) - 2px);
   display: block;
+}
+
+.app-icon img.calendarity-icon {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  max-width: none;
+  margin: -1px;
+}
+
+.app-icon img.slowdown-icon {
+  width: calc(100% + 1px);
+  height: calc(100% + 1px);
+  max-width: none;
+  margin: -0.5px;
 }
 
 .app-card h3 {
@@ -968,6 +1013,12 @@ textarea:focus {
 
   .about-layout {
     grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
   }
 }
 
