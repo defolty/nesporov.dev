@@ -99,11 +99,11 @@ const heroFrontImages = [
 
 if (!prefersReducedMotion && heroFrontItems.length) {
   let frontIndex = 0;
-  const cycleDuration = 2800;
+  const cycleDuration = 2400;
   const fadeOutStart = 0;
-  const swapAt = 320;
-  const frontSwitchAt = 520;
-  const fadeInEnd = 860;
+  const swapAt = 250;
+  const frontSwitchAt = 410;
+  const fadeInEnd = 700;
 
   const setFrontItem = (index) => {
     heroFrontItems.forEach((item, itemIndex) => {
