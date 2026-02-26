@@ -807,6 +807,8 @@ h2 {
 
 .contact-card {
   text-align: center;
+  --contact-radius: var(--radius-md);
+  border-radius: var(--contact-radius);
 }
 
 .contact-links {
@@ -824,7 +826,7 @@ h2 {
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border-default);
-  border-radius: var(--radius-pill);
+  border-radius: var(--contact-radius);
   padding: 0.58rem 0.95rem;
   background: var(--glass-thin);
   color: var(--text-primary);
@@ -862,7 +864,7 @@ textarea {
   border: 1px solid var(--border-subtle);
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-primary);
-  border-radius: var(--radius-md);
+  border-radius: var(--contact-radius);
   padding: 0.75rem 1rem;
   font-family: inherit;
   font-size: 16px;
@@ -886,6 +888,10 @@ input:focus,
 textarea:focus {
   outline: none;
   border-color: rgba(255, 255, 255, 0.3);
+}
+
+#contact .btn {
+  border-radius: var(--contact-radius);
 }
 
 .site-footer {
