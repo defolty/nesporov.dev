@@ -461,6 +461,11 @@ h1 {
   transition: transform 900ms ease-in-out, filter 900ms ease-in-out, opacity 900ms ease-in-out;
 }
 
+.hero-object img.is-swapping {
+  opacity: 0.4;
+  filter: saturate(0.92);
+}
+
 .object-layer {
   position: absolute;
   inset: 0;

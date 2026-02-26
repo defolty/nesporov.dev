@@ -93,6 +93,9 @@ if (!prefersReducedMotion) {
 const heroFrontItems = [
   ...document.querySelectorAll('.hero-object .layer-1, .hero-object .layer-2, .hero-object .layer-3, .hero-object .object-mini-card')
 ];
+const heroFrontImages = [
+  ...document.querySelectorAll('.hero-object .layer-1 img, .hero-object .layer-2 img, .hero-object .layer-3 img, .hero-object .object-mini-card img')
+];
 
 if (!prefersReducedMotion && heroFrontItems.length) {
   let frontIndex = 0;
@@ -106,6 +109,22 @@ if (!prefersReducedMotion && heroFrontItems.length) {
   setFrontItem(frontIndex);
 
   window.setInterval(() => {
+    if (heroFrontImages.length === heroFrontItems.length) {
+      heroFrontImages.forEach((img) => img.classList.add('is-swapping'));
+
+      window.setTimeout(() => {
+        const currentSources = heroFrontImages.map((img) => img.getAttribute('src'));
+        const rotatedSources = [currentSources[currentSources.length - 1], ...currentSources.slice(0, -1)];
+        heroFrontImages.forEach((img, imageIndex) => {
+          img.setAttribute('src', rotatedSources[imageIndex]);
+        });
+      }, 170);
+
+      window.setTimeout(() => {
+        heroFrontImages.forEach((img) => img.classList.remove('is-swapping'));
+      }, 360);
+    }
+
     frontIndex = (frontIndex + 1) % heroFrontItems.length;
     setFrontItem(frontIndex);
   }, 2200);
