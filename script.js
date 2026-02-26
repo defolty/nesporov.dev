@@ -90,54 +90,69 @@ if (!prefersReducedMotion) {
   });
 }
 
-const heroFrontItems = [
-  ...document.querySelectorAll('.hero-object .layer-1, .hero-object .layer-2, .hero-object .layer-3, .hero-object .object-mini-card')
-];
-const heroFrontImages = [
-  ...document.querySelectorAll('.hero-object .layer-1 img, .hero-object .layer-2 img, .hero-object .layer-3 img, .hero-object .object-mini-card img')
-];
+const heroIconStack = document.getElementById('heroIconStack');
 
-if (!prefersReducedMotion && heroFrontItems.length) {
-  let frontIndex = 0;
-  const cycleDuration = 2400;
-  const fadeOutStart = 0;
-  const swapAt = 250;
-  const frontSwitchAt = 410;
-  const fadeInEnd = 700;
+function initHeroIconQueue() {
+  if (!heroIconStack) return;
 
-  const setFrontItem = (index) => {
-    heroFrontItems.forEach((item, itemIndex) => {
-      item.classList.toggle('is-front', itemIndex === index);
+  const sourceIcons = [
+    ...document.querySelectorAll('.cards-grid .app-card .app-icon img')
+  ]
+    .map((img) => img.getAttribute('src'))
+    .filter(Boolean);
+
+  if (!sourceIcons.length) return;
+
+  heroIconStack.innerHTML = '';
+
+  let queue = sourceIcons.map((src, index) => {
+    const item = document.createElement('div');
+    item.className = 'hero-stack-item';
+    item.dataset.heroQueueItem = 'true';
+    item.dataset.key = String(index);
+
+    const image = document.createElement('img');
+    image.src = src;
+    image.alt = '';
+
+    item.appendChild(image);
+    heroIconStack.appendChild(item);
+    return item;
+  });
+
+  const applyQueueLayout = () => {
+    const total = queue.length;
+    const maxDepth = Math.max(total - 1, 1);
+
+    queue.forEach((item, depth) => {
+      const t = depth / maxDepth;
+
+      const size = 82 + t * 86; // front small -> back large
+      const x = -32 + t * 66; // back shifts right
+      const y = -28 + t * 58; // back shifts down
+      const rotate = -72 + t * 24; // pronounced stacked angles (~45..90 visual range)
+      const opacity = 0.94 - t * 0.08;
+
+      item.style.width = `${size}px`;
+      item.style.height = `${size}px`;
+      item.style.opacity = `${opacity}`;
+      item.style.zIndex = String(total - depth);
+      item.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${rotate}deg)`;
+
+      item.classList.toggle('is-front', depth === 0);
     });
   };
 
-  setFrontItem(frontIndex);
+  applyQueueLayout();
 
-  window.setInterval(() => {
-    if (heroFrontImages.length === heroFrontItems.length) {
-      window.setTimeout(() => {
-        heroFrontImages.forEach((img) => img.classList.add('is-swapping'));
-      }, fadeOutStart);
+  if (prefersReducedMotion || queue.length < 2) return;
 
-      window.setTimeout(() => {
-        const currentSources = heroFrontImages.map((img) => img.getAttribute('src'));
-        const rotatedSources = [currentSources[currentSources.length - 1], ...currentSources.slice(0, -1)];
-        heroFrontImages.forEach((img, imageIndex) => {
-          img.setAttribute('src', rotatedSources[imageIndex]);
-        });
-      }, swapAt);
+  const cycle = () => {
+    queue = [...queue.slice(1), queue[0]];
+    applyQueueLayout();
+  };
 
-      window.setTimeout(() => {
-        frontIndex = (frontIndex + 1) % heroFrontItems.length;
-        setFrontItem(frontIndex);
-      }, frontSwitchAt);
-
-      window.setTimeout(() => {
-        heroFrontImages.forEach((img) => img.classList.remove('is-swapping'));
-      }, fadeInEnd);
-    } else {
-      frontIndex = (frontIndex + 1) % heroFrontItems.length;
-      setFrontItem(frontIndex);
-    }
-  }, cycleDuration);
+  window.setInterval(cycle, 2400);
 }
+
+initHeroIconQueue();

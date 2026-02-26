@@ -366,6 +366,80 @@ h1 {
   pointer-events: none;
 }
 
+.hero-stack-stage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.hero-icon-stack {
+  position: relative;
+  width: min(72%, 320px);
+  height: min(72%, 320px);
+}
+
+.hero-stack-item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 132px;
+  height: 132px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-sm), var(--specular);
+  overflow: hidden;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  transition:
+    width 2400ms ease-in-out,
+    height 2400ms ease-in-out,
+    transform 2400ms ease-in-out,
+    opacity 1200ms ease-in-out,
+    box-shadow 1200ms ease-in-out,
+    border-color 1200ms ease-in-out;
+}
+
+.hero-stack-item img {
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  margin: 6px;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+  transform-origin: center center;
+  transition: transform 2400ms ease-in-out, filter 900ms ease-in-out, opacity 900ms ease-in-out;
+}
+
+.hero-stack-item.is-front {
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 20px 34px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.05), var(--specular);
+}
+
+.hero-stack-item.is-front img {
+  animation: heroStackLead 2400ms ease-in-out;
+}
+
+@keyframes heroStackLead {
+  0% {
+    transform: scale(0.96) rotate(-4deg);
+  }
+  45% {
+    transform: scale(1.02) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.03) rotate(2deg);
+  }
+  100% {
+    transform: scale(0.98) rotate(4deg);
+  }
+}
+
 .hero-icon-stage {
   position: relative;
   z-index: 2;
