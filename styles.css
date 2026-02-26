@@ -417,7 +417,7 @@ h1 {
   display: block;
   border-radius: calc(var(--radius-lg) - 6px);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
-  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1), filter 550ms ease, opacity 550ms ease;
+  transition: transform 900ms ease-in-out, filter 900ms ease-in-out, opacity 900ms ease-in-out;
 }
 
 .layer-1 img {
@@ -447,6 +447,7 @@ h1 {
   box-shadow: var(--shadow-sm), var(--specular);
   overflow: hidden;
   animation: prismFloatB 7.4s ease-in-out infinite;
+  transition: box-shadow 900ms ease-in-out, border-color 900ms ease-in-out, opacity 900ms ease-in-out, transform 900ms ease-in-out;
 }
 
 .object-mini-card img {
@@ -457,7 +458,7 @@ h1 {
   display: block;
   border-radius: 14px;
   transform: scale(0.93);
-  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1), filter 550ms ease, opacity 550ms ease;
+  transition: transform 900ms ease-in-out, filter 900ms ease-in-out, opacity 900ms ease-in-out;
 }
 
 .object-layer {
@@ -469,7 +470,8 @@ h1 {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-default);
   box-shadow: var(--shadow-sm), var(--specular);
-  transition: box-shadow 450ms ease, border-color 450ms ease, opacity 450ms ease;
+  transition: box-shadow 900ms ease-in-out, border-color 900ms ease-in-out, opacity 900ms ease-in-out, transform 900ms ease-in-out;
+  opacity: 0.84;
 }
 
 .layer-1 {
@@ -499,15 +501,21 @@ h1 {
   z-index: 1;
 }
 
+.object-mini-card {
+  opacity: 0.9;
+}
+
 .hero-object .is-front {
   z-index: 6 !important;
   border-color: rgba(255, 255, 255, 0.24);
-  box-shadow: 0 20px 34px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.06), var(--specular);
+  box-shadow: 0 22px 38px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(255, 255, 255, 0.07), var(--specular);
+  opacity: 1;
 }
 
 .hero-object .is-front img {
-  transform: scale(0.98) !important;
+  transform: scale(0.99) !important;
   filter: saturate(1.04) brightness(1.03);
+  opacity: 1;
 }
 
 .hero-object .object-mini-card.is-front img {
