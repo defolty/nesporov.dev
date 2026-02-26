@@ -89,3 +89,24 @@ if (!prefersReducedMotion) {
     });
   });
 }
+
+const heroFrontItems = [
+  ...document.querySelectorAll('.hero-object .layer-1, .hero-object .layer-2, .hero-object .layer-3, .hero-object .object-mini-card')
+];
+
+if (!prefersReducedMotion && heroFrontItems.length) {
+  let frontIndex = 0;
+
+  const setFrontItem = (index) => {
+    heroFrontItems.forEach((item, itemIndex) => {
+      item.classList.toggle('is-front', itemIndex === index);
+    });
+  };
+
+  setFrontItem(frontIndex);
+
+  window.setInterval(() => {
+    frontIndex = (frontIndex + 1) % heroFrontItems.length;
+    setFrontItem(frontIndex);
+  }, 2000);
+}
