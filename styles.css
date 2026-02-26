@@ -55,6 +55,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: linear-gradient(165deg, #080d16, #101a2a 58%, #182437);
 }
 
 body {
@@ -62,6 +63,7 @@ body {
   font-family: var(--font-family);
   color: var(--text-primary);
   letter-spacing: 0.2px;
+  padding-bottom: 1rem;
   background:
     radial-gradient(circle at 14% 12%, rgba(154, 173, 204, 0.3), transparent 36%),
     radial-gradient(circle at 84% 20%, rgba(140, 160, 194, 0.26), transparent 40%),
@@ -708,7 +710,7 @@ textarea:focus {
 }
 
 .site-footer {
-  margin: 3rem auto 1rem;
+  margin: 3rem auto 0;
   width: min(1220px, calc(100% - 2rem));
   border-radius: var(--radius-lg);
   padding: 1rem;
@@ -882,10 +884,11 @@ textarea:focus {
     left: 1rem;
     right: 1rem;
     border-radius: 16px;
-    border: 1px solid var(--border-default);
-    background: var(--glass-regular);
-    backdrop-filter: var(--blur-regular);
-    -webkit-backdrop-filter: var(--blur-regular);
+    border: 1px solid var(--border-emphasis);
+    background: rgba(26, 32, 44, 0.78);
+    box-shadow: var(--shadow-md), var(--specular);
+    backdrop-filter: blur(26px) saturate(104%);
+    -webkit-backdrop-filter: blur(26px) saturate(104%);
     display: grid;
     gap: 0.35rem;
     padding: 0.8rem;
@@ -899,6 +902,19 @@ textarea:focus {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+  }
+
+  .nav-links a {
+    width: 100%;
+    justify-content: flex-start;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid transparent;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: var(--border-default);
   }
 
   .cards-grid {
