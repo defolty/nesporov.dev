@@ -99,6 +99,11 @@ const heroFrontImages = [
 
 if (!prefersReducedMotion && heroFrontItems.length) {
   let frontIndex = 0;
+  const cycleDuration = 2800;
+  const fadeOutStart = 0;
+  const swapAt = 320;
+  const frontSwitchAt = 520;
+  const fadeInEnd = 860;
 
   const setFrontItem = (index) => {
     heroFrontItems.forEach((item, itemIndex) => {
@@ -110,7 +115,9 @@ if (!prefersReducedMotion && heroFrontItems.length) {
 
   window.setInterval(() => {
     if (heroFrontImages.length === heroFrontItems.length) {
-      heroFrontImages.forEach((img) => img.classList.add('is-swapping'));
+      window.setTimeout(() => {
+        heroFrontImages.forEach((img) => img.classList.add('is-swapping'));
+      }, fadeOutStart);
 
       window.setTimeout(() => {
         const currentSources = heroFrontImages.map((img) => img.getAttribute('src'));
@@ -118,14 +125,19 @@ if (!prefersReducedMotion && heroFrontItems.length) {
         heroFrontImages.forEach((img, imageIndex) => {
           img.setAttribute('src', rotatedSources[imageIndex]);
         });
-      }, 170);
+      }, swapAt);
+
+      window.setTimeout(() => {
+        frontIndex = (frontIndex + 1) % heroFrontItems.length;
+        setFrontItem(frontIndex);
+      }, frontSwitchAt);
 
       window.setTimeout(() => {
         heroFrontImages.forEach((img) => img.classList.remove('is-swapping'));
-      }, 360);
+      }, fadeInEnd);
+    } else {
+      frontIndex = (frontIndex + 1) % heroFrontItems.length;
+      setFrontItem(frontIndex);
     }
-
-    frontIndex = (frontIndex + 1) % heroFrontItems.length;
-    setFrontItem(frontIndex);
-  }, 2200);
+  }, cycleDuration);
 }
