@@ -148,16 +148,6 @@ function initHeroIconQueue() {
 
   const cycleDuration = 2400;
   const cycle = () => {
-    const leavingFront = queue[0];
-    if (leavingFront) {
-      leavingFront.classList.remove('is-cycling');
-      void leavingFront.offsetWidth;
-      leavingFront.classList.add('is-cycling');
-      window.setTimeout(() => {
-        leavingFront.classList.remove('is-cycling');
-      }, cycleDuration);
-    }
-
     queue = [...queue.slice(1), queue[0]];
     applyQueueLayout();
   };
