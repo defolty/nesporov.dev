@@ -2,7 +2,6 @@ const menuToggle = document.getElementById('menuToggle');
 const menuPanel = document.getElementById('menuPanel');
 const nav = document.querySelector('.nav');
 const typeTarget = document.getElementById('typeTarget');
-const phrase = 'iOS Software Engineer';
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (menuToggle && menuPanel) {
@@ -42,7 +41,7 @@ function typeWriter(node, text, speed = 62) {
   window.setTimeout(tick, 350);
 }
 
-typeWriter(typeTarget, phrase);
+typeWriter(typeTarget, '');
 
 const revealItems = [...document.querySelectorAll('.reveal')];
 
