@@ -89,3 +89,20 @@ if (!prefersReducedMotion) {
     });
   });
 }
+
+const heroTiles = [...document.querySelectorAll('.hero-app-tile')];
+
+if (!prefersReducedMotion && heroTiles.length) {
+  const slots = ['a', 'b', 'd', 'c'];
+  let rotation = 0;
+
+  const shuffleHeroTiles = () => {
+    rotation = (rotation + 1) % slots.length;
+    heroTiles.forEach((tile, index) => {
+      const nextSlot = slots[(index + rotation) % slots.length];
+      tile.dataset.slot = nextSlot;
+    });
+  };
+
+  window.setInterval(shuffleHeroTiles, 2200);
+}
