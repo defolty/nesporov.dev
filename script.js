@@ -19,8 +19,14 @@ if (menuToggle && menuPanel) {
 }
 
 window.addEventListener('scroll', () => {
-  if (!nav) return;
-  nav.classList.toggle('scrolled', window.scrollY > 20);
+  if (nav) {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }
+
+  if (menuToggle && menuPanel && menuPanel.classList.contains('open')) {
+    menuPanel.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
 });
 
 function typeWriter(node, text, speed = 62) {
