@@ -892,11 +892,11 @@ textarea:focus {
     right: 1rem;
     z-index: 80;
     border-radius: 16px;
-    border: 1px solid var(--border-emphasis);
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: var(--shadow-md), var(--specular);
-    backdrop-filter: blur(30px) saturate(102%);
-    -webkit-backdrop-filter: blur(30px) saturate(102%);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(14, 19, 29, 0.94);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.42), var(--specular);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     isolation: isolate;
     overflow: hidden;
     display: grid;
@@ -913,9 +913,7 @@ textarea:focus {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background:
-      linear-gradient(rgba(17, 24, 37, 0.74), rgba(17, 24, 37, 0.74)),
-      rgba(255, 255, 255, 0.04);
+    background: linear-gradient(rgba(20, 26, 39, 0.96), rgba(18, 24, 36, 0.96));
   }
 
   .nav-links.open {
@@ -930,13 +928,14 @@ textarea:focus {
     width: 100%;
     justify-content: flex-start;
     color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   }
 
   .nav-links a:hover {
-    background: rgba(255, 255, 255, 0.16);
-    border-color: var(--border-default);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.16);
   }
 
   .cards-grid {
