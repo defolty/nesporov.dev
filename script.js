@@ -104,55 +104,45 @@ function initHeroIconQueue() {
   if (!sourceIcons.length) return;
 
   heroIconStack.innerHTML = '';
+  const track = document.createElement('div');
+  track.className = 'hero-scroll-track';
 
-  let queue = sourceIcons.map((src, index) => {
-    const item = document.createElement('div');
-    item.className = 'hero-stack-item';
-    item.dataset.heroQueueItem = 'true';
-    item.dataset.key = String(index);
-
-    const image = document.createElement('img');
-    image.src = src;
-    image.alt = '';
-
-    item.appendChild(image);
-    heroIconStack.appendChild(item);
-    return item;
+  const pages = [...sourceIcons, sourceIcons[0]];
+  pages.forEach((src) => {
+    const page = document.createElement('div');
+    page.className = 'hero-scroll-page';
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = '';
+    page.appendChild(img);
+    track.appendChild(page);
   });
 
-  const applyQueueLayout = () => {
-    const total = queue.length;
-    const maxDepth = Math.max(total - 1, 1);
+  heroIconStack.appendChild(track);
 
-    queue.forEach((item, depth) => {
-      const t = depth / maxDepth;
-      const angle = -45 + t * 90; // evenly distributed fan: -45..+45
-      const size = 96 + t * 86; // front small -> back large
-      const x = -20 + t * 40; // gentle fan spread
-      const y = -8 + t * 16;
-      const opacity = 0.96 - t * 0.1;
+  if (prefersReducedMotion || sourceIcons.length < 2) return;
 
-      item.style.width = `${size}px`;
-      item.style.height = `${size}px`;
-      item.style.opacity = `${opacity}`;
-      item.style.zIndex = String(total - depth);
-      item.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${angle}deg)`;
-
-      item.classList.toggle('is-front', depth === 0);
-    });
-  };
-
-  applyQueueLayout();
-
-  if (prefersReducedMotion || queue.length < 2) return;
-
+  let pageIndex = 0;
   const cycleDuration = 2400;
-  const cycle = () => {
-    queue = [...queue.slice(1), queue[0]];
-    applyQueueLayout();
+
+  const goToPage = (index, animate = true) => {
+    track.style.transition = animate ? 'transform 900ms ease-in-out' : 'none';
+    track.style.transform = `translateY(-${index * 100}%)`;
   };
 
-  window.setInterval(cycle, cycleDuration);
+  track.addEventListener('transitionend', () => {
+    if (pageIndex !== sourceIcons.length) return;
+    pageIndex = 0;
+    goToPage(pageIndex, false);
+    // Force reflow so next animated transition works after transition:none reset
+    void track.offsetWidth;
+    track.style.transition = 'transform 900ms ease-in-out';
+  });
+
+  window.setInterval(() => {
+    pageIndex += 1;
+    goToPage(pageIndex, true);
+  }, cycleDuration);
 }
 
 initHeroIconQueue();
