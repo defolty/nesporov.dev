@@ -75,16 +75,41 @@ const tiltCards = document.querySelectorAll('.tilt-card');
 
 if (!prefersReducedMotion) {
   tiltCards.forEach((card) => {
-    card.addEventListener('mousemove', (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
+    let rect = null;
+    let rafId = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+
+    const updateTilt = () => {
+      if (!rect) return;
+      const x = pointerX - rect.left;
+      const y = pointerY - rect.top;
       const rotateY = ((x / rect.width) - 0.5) * 8;
       const rotateX = (0.5 - (y / rect.height)) * 8;
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+      rafId = 0;
+    };
+
+    card.addEventListener('pointerenter', () => {
+      rect = card.getBoundingClientRect();
+      card.classList.add('is-tilting');
     });
 
-    card.addEventListener('mouseleave', () => {
+    card.addEventListener('pointermove', (event) => {
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (rafId === 0) {
+        rafId = window.requestAnimationFrame(updateTilt);
+      }
+    });
+
+    card.addEventListener('pointerleave', () => {
+      if (rafId !== 0) {
+        window.cancelAnimationFrame(rafId);
+        rafId = 0;
+      }
+      rect = null;
+      card.classList.remove('is-tilting');
       card.style.transform = '';
     });
   });
