@@ -669,6 +669,10 @@ h2 {
   transform-style: preserve-3d;
 }
 
+.tilt-card.is-tilting {
+  transition: background var(--transition-default), border-color var(--transition-default), transform 60ms linear;
+}
+
 .app-card:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.2);
