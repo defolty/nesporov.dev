@@ -2,6 +2,8 @@ const menuToggle = document.getElementById('menuToggle');
 const menuPanel = document.getElementById('menuPanel');
 const nav = document.querySelector('.nav');
 const typeTarget = document.getElementById('typeTarget');
+const copyEmailButton = document.getElementById('copyEmailButton');
+const emailStatus = document.getElementById('emailStatus');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (menuToggle && menuPanel) {
@@ -48,6 +50,28 @@ function typeWriter(node, text, speed = 62) {
 }
 
 typeWriter(typeTarget, '');
+
+if (copyEmailButton) {
+  copyEmailButton.addEventListener('click', async () => {
+    const address = [109, 97, 105, 110, 64, 110, 101, 115, 112, 111, 114, 111, 118, 46, 100, 101, 118]
+      .map((char) => String.fromCharCode(char))
+      .join('');
+
+    try {
+      await navigator.clipboard.writeText(address);
+      copyEmailButton.textContent = 'email copied';
+      if (emailStatus) emailStatus.textContent = 'email copied to clipboard.';
+    } catch {
+      copyEmailButton.textContent = 'copy failed';
+      if (emailStatus) emailStatus.textContent = 'copy failed. use telegram or linkedin.';
+    }
+
+    window.setTimeout(() => {
+      copyEmailButton.textContent = 'copy email';
+      if (emailStatus) emailStatus.textContent = 'email is hidden from bots. tap copy email to contact me.';
+    }, 2200);
+  });
+}
 
 const revealItems = [...document.querySelectorAll('.reveal')];
 

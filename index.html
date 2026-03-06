@@ -160,7 +160,7 @@
             </div>
             <p class="service-links">
               <a href="/privacy-policy.html">privacy policy</a>
-              <a href="mailto:main@nesporov.dev">support</a>
+              <a href="#contact">support</a>
             </p>
           </article>
 
@@ -234,27 +234,12 @@
           <h2>contact</h2>
           <p>open for product work, consulting, and app collaborations.</p>
           <div class="contact-links">
-            <a class="contact-link email" href="mailto:main@nesporov.dev">main@nesporov.dev</a>
+            <button class="contact-link email" type="button" id="copyEmailButton">copy email</button>
             <a class="contact-link telegram" href="http://t.me/nikitanesporov/" target="_blank" rel="noopener noreferrer">telegram</a>
             <a class="contact-link linkedin" href="https://linkedin.com/in/nikitanesporov" target="_blank" rel="noopener noreferrer">linkedin</a>
             <a class="contact-link github" href="https://github.com/defolty" target="_blank" rel="noopener noreferrer">github</a>
           </div>
-
-          <form class="contact-form" action="mailto:main@nesporov.dev" method="post" enctype="text/plain">
-            <label>
-              name
-              <input type="text" name="name" autocomplete="name" required />
-            </label>
-            <label>
-              email
-              <input type="email" name="email" autocomplete="email" required />
-            </label>
-            <label>
-              message
-              <textarea name="message" rows="4" required></textarea>
-            </label>
-            <button class="btn btn-primary" type="submit">send message</button>
-          </form>
+          <p class="contact-note" id="emailStatus">email is hidden from bots. tap copy email to contact me.</p>
         </div>
       </section>
     </main>
