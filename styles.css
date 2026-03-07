@@ -631,6 +631,7 @@ h2 {
 .tag-row span,
 .external-badge,
 .coming-soon,
+.released-badge,
 .legacy-badge {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid var(--border-subtle);
@@ -759,6 +760,16 @@ h2 {
   top: 1rem;
   right: 1rem;
   animation: pulse 2.2s ease-in-out infinite;
+}
+
+.released-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #c8f7dc;
+  background: rgba(72, 200, 123, 0.16);
+  border-color: rgba(115, 224, 157, 0.38);
+  text-transform: lowercase;
 }
 
 .legacy-badge {
