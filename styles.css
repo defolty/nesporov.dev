@@ -732,13 +732,6 @@ h2 {
   margin: -1px;
 }
 
-.app-icon img.slowdown-icon {
-  width: calc(100% + 1px);
-  height: calc(100% + 1px);
-  max-width: none;
-  margin: -0.5px;
-}
-
 .app-card h3 {
   margin: 0.2rem 0 0;
   font-size: 20px;

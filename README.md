@@ -31,7 +31,6 @@ This repository contains the source code for [nesporov.dev](https://nesporov.dev
 | Bassport Pro | Live | iOS | Privacy: `/apps/bassport-pro/privacy-policy.html`, Support: `/apps/bassport-pro/support.html` |
 | Bassport | Legacy | iOS | [App Store](https://apps.apple.com/am/app/bassport/id1573554303) |
 | Calendar Workdays | Legacy | iOS | [App Store](https://apps.apple.com/us/app/calendar-workdays/id6475014070) |
-| SlowDown | In development | watchOS | Privacy: `/apps/slowdown/privacy-policy.html`, Support: `/apps/slowdown/support.html` |
 
 ## Tech Stack
 
