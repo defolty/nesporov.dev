@@ -93,11 +93,10 @@ function populateMarquee(selector, items) {
   const marquee = document.querySelector(selector);
   if (!marquee) return;
 
-  [...items, ...items].forEach((item, index) => {
+  items.forEach((item) => {
     const pill = document.createElement('span');
     pill.className = 'tech-pill';
     pill.textContent = item;
-    if (index >= items.length) pill.setAttribute('aria-hidden', 'true');
     marquee.append(pill);
   });
 }
