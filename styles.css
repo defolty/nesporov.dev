@@ -536,9 +536,12 @@ h1 {
   isolation: isolate;
   display: grid;
   overflow: hidden;
-  grid-template-columns: minmax(240px, 0.85fr) minmax(300px, 1.4fr) auto;
+  grid-template-areas:
+    'header description'
+    'header actions';
+  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
   align-items: center;
-  column-gap: 28px;
+  gap: 12px 32px;
   border-color: transparent;
   background: transparent;
 }
@@ -586,6 +589,10 @@ h1 {
   z-index: 1;
 }
 
+.project-card-monefic .project-header {
+  grid-area: header;
+}
+
 .project-card-monefic .project-header img {
   flex-basis: 72px;
   width: 72px;
@@ -596,14 +603,21 @@ h1 {
 }
 
 .project-card-monefic .project-title-row h2 {
+  flex: 0 0 auto;
   font-size: 24px;
 }
 
+.project-card-monefic .project-title-row {
+  flex-wrap: wrap;
+}
+
 .project-card-monefic .project-description {
+  grid-area: description;
   max-width: 520px;
 }
 
 .project-card-monefic .project-actions {
+  grid-area: actions;
   margin-top: 0;
 }
 
