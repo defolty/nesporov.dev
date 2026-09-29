@@ -68,6 +68,8 @@ Full notes are available in `DEPLOYMENT.md`.
 ├── index.html
 ├── styles.css
 ├── script.js
+├── nes-fx.js
+├── Audiowide/
 ├── n_logo.png
 ├── me.jpeg
 ├── apps/

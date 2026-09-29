@@ -18,233 +18,329 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./n_logo.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./n_logo.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="./n_logo.png" />
-    <link rel="preload" href="./me.jpeg?v=20260713" as="image" type="image/jpeg" fetchpriority="high" />
+    <link rel="preload" href="./Audiowide/Audiowide-Regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Jura:wght@400;500;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css?v=20260719-2" />
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20260929" />
   </head>
   <body>
     <a class="skip-link" href="#main">skip to content</a>
 
-    <div class="ambient-background" aria-hidden="true">
-      <div class="code-columns">
-        <pre class="code-column" data-code-column="0"><span class="code-content"></span><span class="code-cursor"></span></pre>
-        <pre class="code-column" data-code-column="1"><span class="code-content"></span><span class="code-cursor"></span></pre>
-        <pre class="code-column" data-code-column="2"><span class="code-content"></span><span class="code-cursor"></span></pre>
-      </div>
-      <span class="cursor-glow"></span>
-      <span class="background-vignette"></span>
-    </div>
+    <div class="page" id="top">
+      <div class="fx-host" data-fx-host aria-hidden="true"></div>
+      <div class="fx-shade" aria-hidden="true"></div>
+      <div class="scroll-progress" data-progress aria-hidden="true"></div>
 
-    <header class="site-header" id="top">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="#top" aria-label="nesporov.dev — back to top">
-          <span class="brand-mark" aria-hidden="true">N</span>
-          <span>nesporov.dev</span>
-        </a>
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="menuPanel"
-          aria-label="Open navigation"
-        >
-          <span></span><span></span><span></span>
-        </button>
-        <div class="nav-links" id="menuPanel">
-          <a href="#about">about</a>
-          <a href="#projects">apps</a>
-          <a href="#tech">tech</a>
-          <a class="nav-contact" href="#contact">contact</a>
+        <a class="brand" href="#top" data-magnetic="0.25">nesporov.dev</a>
+        <div class="nav-links">
+          <a href="#about" data-magnetic="0.3">about</a>
+          <a href="#experience" data-magnetic="0.3">experience</a>
+          <a href="#apps" data-magnetic="0.3">apps</a>
+          <a href="#tech" data-magnetic="0.3">tech</a>
+          <a href="#contact" data-magnetic="0.3">contact</a>
         </div>
       </nav>
-    </header>
 
-    <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="portrait-shell" data-glow="1.04">
-          <span class="portrait-glow" aria-hidden="true"></span>
-          <img
-            src="./me.jpeg?v=20260713"
-            alt="Nikita Nesporov"
-            width="176"
-            height="176"
-            decoding="async"
-            fetchpriority="high"
-          />
-        </div>
-        <p class="kicker">
-          <span aria-hidden="true"></span>mobile development<span aria-hidden="true"></span>
-        </p>
-        <h1 id="hero-title">nikita nesporov</h1>
-        <p class="hero-description">
-          iOS software engineer focused on clean architecture, smooth UX, and production-ready apps for Apple platforms.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">apps</a>
-          <a class="btn btn-secondary" href="#contact">contact</a>
-        </div>
-      </section>
-
-      <section class="section" id="about" aria-labelledby="about-title">
-        <p class="section-label" id="about-title">// about</p>
-        <div class="about-card surface" data-glow="1.01">
-          <p class="about-lead">
-            iOS software engineer with experience in a high-load international product serving
-            <strong>5M+ monthly users</strong> across multiple European markets. I specialize in complex native interfaces,
-            scalable mobile architecture, and performance-critical product flows.
+      <main id="main">
+        <section class="hero" data-bg-shape="text:N" aria-labelledby="hero-title">
+          <div class="hero-kicker" data-reveal>
+            <span class="hero-mark" aria-hidden="true">
+              <svg viewBox="0 0 120 90" width="24" height="18">
+                <g fill="#d2cefd">
+                  <rect x="0" y="0" width="30" height="90"></rect>
+                  <polygon points="15,0 38,0 105,90 82,90"></polygon>
+                  <rect x="95" y="0" width="25" height="68"></rect>
+                </g>
+              </svg>
+            </span>
+            <span class="section-label">// mobile development</span>
+          </div>
+          <h1 class="hero-title" id="hero-title" data-cursor="hover" aria-label="nikita nesporov">
+            <span class="hero-line" aria-hidden="true"><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.05">n</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.08">i</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.11">k</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.14">i</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.17">t</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.2">a</span></span>
+            <span class="hero-line" aria-hidden="true"><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.22">n</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.25">e</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.28">s</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.31">p</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.34">o</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.37">r</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.4">o</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.43">v</span></span>
+          </h1>
+          <p class="hero-description" data-reveal data-reveal-delay="0.5">
+            iOS software engineer focused on clean architecture, smooth UX, and production-ready apps for Apple platforms.
           </p>
-          <ul class="about-highlights">
-            <li data-glow="1.02">Advanced UIKit, custom components, dynamic layouts, and animation-heavy screens</li>
-            <li data-glow="1.02">VIPER + modular architecture with strict layer isolation and reuse</li>
-            <li data-glow="1.02">Tuist-based build pipeline, design system, and full test cycle (unit / UI / snapshot)</li>
-            <li data-glow="1.02">CI/CD automation with AI-assisted checks and a minimal-dependency approach</li>
+          <div class="button-row" data-reveal data-reveal-delay="0.6">
+            <a class="btn btn-primary" href="#apps" data-magnetic="0.35" data-cursor="apps">apps <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-secondary" href="#contact" data-magnetic="0.35">contact</a>
+          </div>
+          <div class="scroll-hint" aria-hidden="true"><span></span>scroll · move · click</div>
+        </section>
+
+        <section class="section about" id="about" data-bg-shape="sphere" aria-labelledby="about-title">
+          <span class="section-label" id="about-title" data-reveal>// about</span>
+          <div class="about-copy">
+            <p class="fill-text fill-text-lead" data-fill>
+              iOS software engineer with experience in a high-load international product serving
+              <span class="accent">5M+ monthly users</span> across multiple European markets.
+            </p>
+            <p class="fill-text" data-fill>
+              I specialize in complex native interfaces, scalable mobile architecture, and performance-critical product flows.
+            </p>
+          </div>
+          <ul class="highlights">
+            <li class="glass-card" data-reveal data-spot>
+              <span class="highlight-index">01</span>
+              <span>Advanced UIKit, custom components, dynamic layouts, and animation-heavy screens</span>
+            </li>
+            <li class="glass-card" data-reveal data-reveal-delay="0.08" data-spot>
+              <span class="highlight-index">02</span>
+              <span>VIPER + modular architecture with strict layer isolation and reuse</span>
+            </li>
+            <li class="glass-card" data-reveal data-reveal-delay="0.16" data-spot>
+              <span class="highlight-index">03</span>
+              <span>Tuist-based build pipeline, design system, and full test cycle (unit / UI / snapshot)</span>
+            </li>
+            <li class="glass-card" data-reveal data-reveal-delay="0.24" data-spot>
+              <span class="highlight-index">04</span>
+              <span>CI/CD automation with AI-assisted checks and a minimal-dependency approach</span>
+            </li>
           </ul>
-          <p class="about-note">
-            Background includes large corporate apps, navigation design, chat modules, promo systems, legacy modernization,
-            and release management.
+          <p class="about-note" data-reveal>
+            Background includes large corporate apps, navigation design, chat modules, promo systems, legacy modernization, and release management.
           </p>
-        </div>
-      </section>
+        </section>
 
-      <section class="section" id="projects" aria-labelledby="projects-title">
-        <header class="section-heading">
-          <p class="section-label" id="projects-title">// apps</p>
-          <p>independent iOS apps — shipped &amp; in progress</p>
-        </header>
-        <div class="projects-grid">
-          <article class="project-card project-card-featured project-card-monefic surface" data-glow="1.01">
-            <div class="project-header">
-              <img src="./apps/app-icons/monefic.png?v=20260817" alt="Monefic app icon" width="72" height="72" loading="lazy" decoding="async" />
-              <div>
-                <div class="project-title-row"><h2>monefic</h2><span class="tag tag-released">released</span></div>
-                <p class="project-meta">ios · personal finance · productivity</p>
-              </div>
+        <section class="section experience" id="experience" data-bg-shape="text:5M+" aria-labelledby="experience-title">
+          <span class="section-label" id="experience-title" data-reveal>// experience</span>
+          <div class="stats">
+            <div class="stat" data-reveal>
+              <span class="stat-value" data-particles>5M+</span>
+              <span class="stat-caption">monthly users</span>
             </div>
-            <p class="project-description">
-              Personal finance tracker for accounts, participants, and multiple currencies — conversational input, budgets, goals, rich statistics, and flexible data export.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary" href="https://apps.apple.com/am/app/monefic/id6792517737" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="text-link" href="/apps/monefic/privacy-policy.html">privacy</a>
-              <a class="text-link" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">terms of use</a>
-              <a class="text-link" href="/apps/monefic/support.html">support</a>
+            <div class="stat" data-reveal data-reveal-delay="0.1">
+              <span class="stat-value" data-particles>5</span>
+              <span class="stat-caption">apps on the App Store</span>
             </div>
-          </article>
-
-          <article class="project-card surface" data-glow="1.02">
-            <div class="project-header">
-              <img src="./apps/app-icons/calendarity.png?v=20260713" alt="Calendarity app icon" width="60" height="60" loading="lazy" decoding="async" />
-              <div>
-                <div class="project-title-row"><h2>calendarity</h2><span class="tag tag-released">released</span></div>
-                <p class="project-meta">ios · productivity · calendar</p>
-              </div>
+            <div class="stat" data-reveal data-reveal-delay="0.2">
+              <span class="stat-value" data-particles>EU</span>
+              <span class="stat-caption">multiple European markets</span>
             </div>
-            <p class="project-description">
-              Calendar app with advanced planning capabilities — flexible scheduling, recurring events, and a fluid native interface.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-secondary" href="https://calendarity.app" target="_blank" rel="noopener noreferrer">website ↗</a>
-              <a class="btn btn-primary" href="https://apps.apple.com/us/app/calendarity/id6747371890" target="_blank" rel="noopener noreferrer">App Store</a>
-            </div>
-          </article>
-
-          <article class="project-card surface" data-glow="1.02">
-            <div class="project-header">
-              <img src="./apps/app-icons/bassport-pro.png?v=20260713" alt="Bassport Pro app icon" width="60" height="60" loading="lazy" decoding="async" />
-              <div>
-                <div class="project-title-row"><h2>bassport pro</h2><span class="tag tag-released">released</span></div>
-                <p class="project-meta">ios · audio · utility</p>
-              </div>
-            </div>
-            <p class="project-description">
-              Car-audio utility to calculate bass ports and tune sound in your vehicle — precise math behind a clean interface.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary" href="https://apps.apple.com/am/app/bassport-pro/id6759520985" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="text-link" href="/apps/bassport-pro/privacy-policy.html">privacy</a>
-              <a class="text-link" href="/apps/bassport-pro/support.html">support</a>
-            </div>
-          </article>
-
-          <article class="project-card project-card-legacy surface" data-glow="1.02">
-            <div class="project-header">
-              <img src="./apps/app-icons/bassport-old.png?v=20260713" alt="Bassport app icon" width="60" height="60" loading="lazy" decoding="async" />
-              <div>
-                <div class="project-title-row"><h2>bassport</h2><span class="tag tag-legacy">legacy</span></div>
-                <p class="project-meta">ios · audio · legacy</p>
-              </div>
-            </div>
-            <p class="project-description">
-              First release of Bassport — an early iOS car-audio helper, the foundation the Pro version grew from.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary" href="https://apps.apple.com/am/app/bassport/id1573554303" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="text-link" href="/privacy-policy.html">privacy</a>
-            </div>
-          </article>
-
-          <article class="project-card project-card-legacy surface" data-glow="1.02">
-            <div class="project-header">
-              <img src="./apps/app-icons/workdays.png?v=20260713" alt="Calendar Workdays app icon" width="60" height="60" loading="lazy" decoding="async" />
-              <div>
-                <div class="project-title-row"><h2>workdays</h2><span class="tag tag-legacy">legacy</span></div>
-                <p class="project-meta">ios · productivity · calendar</p>
-              </div>
-            </div>
-            <p class="project-description">
-              Convenient workdays calendar for tracking shifts and planning schedules — simple, focused, dependable.
-            </p>
-            <div class="project-actions">
-              <a class="btn btn-primary" href="https://apps.apple.com/us/app/calendar-workdays/id6475014070" target="_blank" rel="noopener noreferrer">App Store</a>
-              <a class="text-link" href="/apps/calendar-workdays/privacy-policy.html">privacy</a>
-              <a class="text-link" href="/apps/calendar-workdays/support.html">support</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="tech-section" id="tech" aria-labelledby="tech-title">
-        <header class="section-heading">
-          <p class="section-label" id="tech-title">// tech stack</p>
-          <p>Architecture, tools, and services I use in production — from module boundaries to the release pipeline.</p>
-        </header>
-        <div class="marquees">
-          <div class="marquee-mask">
-            <div class="marquee marquee-left" data-marquee="primary"></div>
           </div>
-          <div class="marquee-mask">
-            <div class="marquee marquee-right" data-marquee="secondary"></div>
+          <div class="timeline" data-fill>
+            <span class="timeline-track" aria-hidden="true"></span>
+            <span class="timeline-progress" aria-hidden="true"></span>
+            <div class="timeline-item timeline-item-current" data-reveal>
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="timeline-period">now</span>
+              <h3 class="timeline-title">iOS software engineer · high-load international product</h3>
+              <p class="timeline-text">5M+ monthly users across multiple European markets. Complex native interfaces, scalable mobile architecture, performance-critical product flows.</p>
+            </div>
+            <div class="timeline-item" data-reveal>
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="timeline-period">before</span>
+              <h3 class="timeline-title">Large corporate apps</h3>
+              <p class="timeline-text">Navigation design, chat modules, promo systems, legacy modernization, and release management.</p>
+            </div>
+            <div class="timeline-item" data-reveal>
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <span class="timeline-period">independent</span>
+              <h3 class="timeline-title">Own iOS apps, shipped end to end</h3>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-card surface" data-glow="1.01">
-          <p class="section-label">// contact</p>
-          <h2 id="contact-title">let's build something great</h2>
-          <p>Open to iOS engineering roles and select product work. The fastest way to reach me is Telegram.</p>
-          <div class="contact-links">
-            <a class="btn btn-primary" href="http://t.me/nikitanesporov/" target="_blank" rel="noopener noreferrer">Telegram</a>
-            <a class="btn btn-secondary" href="https://linkedin.com/in/nikitanesporov" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="btn btn-secondary" href="https://github.com/defolty" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <button class="btn btn-secondary" id="copyEmailButton" type="button">copy email</button>
+        <section class="apps" id="apps" aria-labelledby="apps-title">
+          <div class="apps-heading" data-bg-shape="app:0">
+            <span class="section-label" data-reveal>// apps</span>
+            <h2 class="display-title" id="apps-title" data-reveal>independent iOS apps</h2>
+          </div>
+
+          <div class="apps-track" data-apps-track data-bg-shape="app:0">
+            <div class="apps-sticky">
+              <div class="apps-meta" aria-hidden="true">
+                <span><span data-apps-counter>01</span> / 08</span>
+                <span>scroll to spread the stack · hover to tilt</span>
+              </div>
+              <ol class="apps-stack">
+                <li class="app-slot" style="--i: 0; --col: 0; --row: 0; z-index: 8" data-app-slot>
+                  <article class="app-card" data-tilt data-spot>
+                    <div class="app-card-head">
+                      <img class="app-card-icon" src="./apps/app-icons/monefic.png?v=20260817" alt="Monefic app icon" width="76" height="76" loading="lazy" decoding="async" />
+                      <div class="app-card-title">
+                        <h3>monefic</h3>
+                        <span class="status status-released">released</span>
+                      </div>
+                      <span class="app-card-num">01</span>
+                    </div>
+                    <span class="app-card-tags">ios · personal finance · productivity</span>
+                    <p class="app-card-desc">Personal finance tracker for accounts, participants, and multiple currencies — conversational input, budgets, goals, rich statistics, and flexible data export.</p>
+                    <div class="app-card-links">
+                      <a class="chip chip-primary" href="https://apps.apple.com/am/app/monefic/id6792517737" target="_blank" rel="noopener noreferrer">App Store</a>
+                      <a class="chip" href="/apps/monefic/privacy-policy.html">privacy</a>
+                      <a class="chip" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">terms of use</a>
+                      <a class="chip" href="/apps/monefic/support.html">support</a>
+                    </div>
+                  </article>
+                </li>
+                <li class="app-slot" style="--i: 1; --col: 1; --row: 0; z-index: 7" data-app-slot>
+                  <article class="app-card" data-tilt data-spot>
+                    <div class="app-card-head">
+                      <img class="app-card-icon" src="./apps/app-icons/calendarity.png?v=20260713" alt="Calendarity app icon" width="76" height="76" loading="lazy" decoding="async" />
+                      <div class="app-card-title">
+                        <h3>calendarity</h3>
+                        <span class="status status-released">released</span>
+                      </div>
+                      <span class="app-card-num">02</span>
+                    </div>
+                    <span class="app-card-tags">ios · productivity · calendar</span>
+                    <p class="app-card-desc">Calendar app with advanced planning capabilities — flexible scheduling, recurring events, and a fluid native interface.</p>
+                    <div class="app-card-links">
+                      <a class="chip chip-primary" href="https://apps.apple.com/us/app/calendarity/id6747371890" target="_blank" rel="noopener noreferrer">App Store</a>
+                      <a class="chip" href="https://calendarity.app" target="_blank" rel="noopener noreferrer">website ↗</a>
+                    </div>
+                  </article>
+                </li>
+                <li class="app-slot" style="--i: 2; --col: 2; --row: 0; z-index: 6" data-app-slot>
+                  <article class="app-card" data-tilt data-spot>
+                    <div class="app-card-head">
+                      <img class="app-card-icon" src="./apps/app-icons/bassport-pro.png?v=20260713" alt="Bassport Pro app icon" width="76" height="76" loading="lazy" decoding="async" />
+                      <div class="app-card-title">
+                        <h3>bassport pro</h3>
+                        <span class="status status-released">released</span>
+                      </div>
+                      <span class="app-card-num">03</span>
+                    </div>
+                    <span class="app-card-tags">ios · audio · utility</span>
+                    <p class="app-card-desc">Car-audio utility to calculate bass ports and tune sound in your vehicle — precise math behind a clean interface.</p>
+                    <div class="app-card-links">
+                      <a class="chip chip-primary" href="https://apps.apple.com/am/app/bassport-pro/id6759520985" target="_blank" rel="noopener noreferrer">App Store</a>
+                      <a class="chip" href="/apps/bassport-pro/privacy-policy.html">privacy</a>
+                      <a class="chip" href="/apps/bassport-pro/support.html">support</a>
+                    </div>
+                  </article>
+                </li>
+                <li class="app-slot" style="--i: 3; --col: 3; --row: 0; z-index: 5" data-app-slot>
+                  <article class="app-card" data-tilt data-spot>
+                    <div class="app-card-head">
+                      <img class="app-card-icon" src="./apps/app-icons/renovateit.png?v=20260929" alt="RenovateIt app icon" width="76" height="76" loading="lazy" decoding="async" />
+                      <div class="app-card-title">
+                        <h3>RenovateIt</h3>
+                        <span class="status status-upcoming">coming soon</span>
+                      </div>
+                      <span class="app-card-num">04</span>
+                    </div>
+                    <span class="app-card-tags">ios · home · planning</span>
+                    <p class="app-card-desc">Preparing for App Store release.</p>
+                  </article>
+                </li>
+                <li class="app-slot" style="--i: 4; --col: 0; --row: 1; z-index: 4" data-app-slot>
+                  <article class="app-card" data-tilt data-spot>
+                    <div class="app-card-head">
+                      <img class="app-card-icon" src="./apps/app-icons/alias.png?v=20260929" alt="Alias app icon" width="76" height="76" loading="lazy" decoding="async" />
+                      <div class="app-card-title">
+                        <h3>Alias</h3>
+                        <span class="status status-upcoming">coming soon</span>
+                      </div>
+                      <span class="app-card-num">05</span>
+                    </div>
+                    <span class="app-card-tags">ios</span>
+                    <p class="app-card-desc">Preparing for App Store release.</p>
+                  </article>
+                </li>
+                <li class="app-slot" style="--i: 5; --col: 1; --row: 1; z-index: 3" data-app-slot>
+                  <article class="app-card" data-tilt data-spot>
+                    <div class="app-card-head">
+                      <img class="app-card-icon" src="./apps/app-icons/cardify.png?v=20260929" alt="Cardify app icon" width="76" height="76" loading="lazy" decoding="async" />
+                      <div class="app-card-title">
+                        <h3>Cardify</h3>
+                        <span class="status status-upcoming">coming soon</span>
+                      </div>
+                      <span class="app-card-num">06</span>
+                    </div>
+                    <span class="app-card-tags">ios · cards</span>
+                    <p class="app-card-desc">Preparing for App Store release.</p>
+                  </article>
+                </li>
+                <li class="app-slot" style="--i: 6; --col: 2; --row: 1; z-index: 2" data-app-slot>
+                  <article class="app-card" data-tilt data-spot>
+                    <div class="app-card-head">
+                      <img class="app-card-icon" src="./apps/app-icons/bassport-old.png?v=20260713" alt="Bassport app icon" width="76" height="76" loading="lazy" decoding="async" />
+                      <div class="app-card-title">
+                        <h3>bassport</h3>
+                        <span class="status status-legacy">legacy</span>
+                      </div>
+                      <span class="app-card-num">07</span>
+                    </div>
+                    <span class="app-card-tags">ios · audio · legacy</span>
+                    <p class="app-card-desc">First release of Bassport — an early iOS car-audio helper, the foundation the Pro version grew from.</p>
+                    <div class="app-card-links">
+                      <a class="chip chip-primary" href="https://apps.apple.com/am/app/bassport/id1573554303" target="_blank" rel="noopener noreferrer">App Store</a>
+                      <a class="chip" href="/privacy-policy.html">privacy</a>
+                    </div>
+                  </article>
+                </li>
+                <li class="app-slot" style="--i: 7; --col: 3; --row: 1; z-index: 1" data-app-slot>
+                  <article class="app-card" data-tilt data-spot>
+                    <div class="app-card-head">
+                      <img class="app-card-icon" src="./apps/app-icons/workdays.png?v=20260713" alt="Calendar Workdays app icon" width="76" height="76" loading="lazy" decoding="async" />
+                      <div class="app-card-title">
+                        <h3>workdays</h3>
+                        <span class="status status-legacy">legacy</span>
+                      </div>
+                      <span class="app-card-num">08</span>
+                    </div>
+                    <span class="app-card-tags">ios · productivity · calendar</span>
+                    <p class="app-card-desc">Convenient workdays calendar for tracking shifts and planning schedules — simple, focused, dependable.</p>
+                    <div class="app-card-links">
+                      <a class="chip chip-primary" href="https://apps.apple.com/us/app/calendar-workdays/id6475014070" target="_blank" rel="noopener noreferrer">App Store</a>
+                      <a class="chip" href="/apps/calendar-workdays/privacy-policy.html">privacy</a>
+                      <a class="chip" href="/apps/calendar-workdays/support.html">support</a>
+                    </div>
+                  </article>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="tech" id="tech" data-bg-shape="text:{ }" aria-labelledby="tech-title">
+          <div class="tech-heading">
+            <span class="section-label" id="tech-title" data-reveal>// tech stack</span>
+            <p class="tech-description" data-reveal>Architecture, tools, and services I use in production — from module boundaries to the release pipeline.</p>
+          </div>
+          <div class="marquees">
+            <div class="marquee" data-marquee="1">
+              <span class="pill">Swift</span><span class="pill">UIKit</span><span class="pill">VIPER</span><span class="pill">Modular architecture</span><span class="pill">Tuist</span><span class="pill">Design system</span><span class="pill">Custom components</span><span class="pill">Dynamic layouts</span>
+              <span class="pill" aria-hidden="true">Swift</span><span class="pill" aria-hidden="true">UIKit</span><span class="pill" aria-hidden="true">VIPER</span><span class="pill" aria-hidden="true">Modular architecture</span><span class="pill" aria-hidden="true">Tuist</span><span class="pill" aria-hidden="true">Design system</span><span class="pill" aria-hidden="true">Custom components</span><span class="pill" aria-hidden="true">Dynamic layouts</span>
+            </div>
+            <div class="marquee marquee-muted" data-marquee="-1">
+              <span class="pill">Unit tests</span><span class="pill">UI tests</span><span class="pill">Snapshot tests</span><span class="pill">CI/CD</span><span class="pill">AI-assisted checks</span><span class="pill">Minimal dependencies</span><span class="pill">Release management</span><span class="pill">Legacy modernization</span>
+              <span class="pill" aria-hidden="true">Unit tests</span><span class="pill" aria-hidden="true">UI tests</span><span class="pill" aria-hidden="true">Snapshot tests</span><span class="pill" aria-hidden="true">CI/CD</span><span class="pill" aria-hidden="true">AI-assisted checks</span><span class="pill" aria-hidden="true">Minimal dependencies</span><span class="pill" aria-hidden="true">Release management</span><span class="pill" aria-hidden="true">Legacy modernization</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact" id="contact" data-bg-shape="text:hi" aria-labelledby="contact-title">
+          <span class="section-label" data-reveal>// contact</span>
+          <h2 class="display-title contact-title" id="contact-title" data-reveal>let's build something great</h2>
+          <p class="contact-description" data-reveal>Open to iOS engineering roles and select product work. The fastest way to reach me is Telegram.</p>
+          <div class="button-row" data-reveal>
+            <a class="btn btn-primary btn-large" href="https://t.me/nikitanesporov/" target="_blank" rel="noopener noreferrer" data-magnetic="0.4" data-cursor="write">Telegram <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary btn-large" href="https://linkedin.com/in/nikitanesporov" target="_blank" rel="noopener noreferrer" data-magnetic="0.4">LinkedIn</a>
+            <a class="btn btn-secondary btn-large" href="https://github.com/defolty" target="_blank" rel="noopener noreferrer" data-magnetic="0.4">GitHub</a>
+            <button class="btn btn-secondary btn-large" id="copyEmailButton" type="button" data-magnetic="0.4">copy email</button>
           </div>
           <p class="contact-status" id="emailStatus" role="status" aria-live="polite"></p>
-        </div>
-      </section>
-    </main>
+          <footer class="footer">
+            <span>© 2026 Nikita Nesporov. All rights reserved.</span>
+            <span>built with clean architecture in mind</span>
+          </footer>
+        </section>
+      </main>
 
-    <footer class="site-footer">
-      <p>© 2026 Nikita Nesporov. All rights reserved.</p>
-      <p>built with clean architecture in mind</p>
-    </footer>
+      <div class="hud" aria-hidden="true">
+        <span>x <span data-hud="x">----</span></span>
+        <span>y <span data-hud="y">----</span></span>
+        <span>scroll <span data-hud="s">000%</span></span>
+      </div>
+    </div>
 
-    <script src="./script.js?v=20260713-6" defer></script>
+    <script src="./nes-fx.js?v=20260929" defer></script>
+    <script src="./script.js?v=20260929" defer></script>
   </body>
 </html>
