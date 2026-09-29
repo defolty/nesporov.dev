@@ -111,8 +111,12 @@ ul {
 .fx-host,
 .fx-shade {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 0;
+  height: 100vh;
+  height: 100lvh;
   pointer-events: none;
 }
 
@@ -166,7 +170,6 @@ main {
 .nav-links {
   display: flex;
   gap: 2px;
-  justify-content: flex-end;
   min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -174,6 +177,10 @@ main {
 
 .nav-links::-webkit-scrollbar {
   display: none;
+}
+
+.nav-links a:first-child {
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -359,6 +366,14 @@ main {
 }
 
 /* ---------- about ---------- */
+
+.section,
+.about-copy,
+.apps-heading,
+.tech,
+.tech-heading {
+  grid-template-columns: minmax(0, 1fr);
+}
 
 .section {
   display: grid;
