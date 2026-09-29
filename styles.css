@@ -179,8 +179,84 @@ main {
   display: none;
 }
 
-.nav-links a:first-child {
+.nav-prefs {
+  display: flex;
+  align-items: center;
+  gap: 2px;
   margin-left: auto;
+  margin-right: 6px;
+  padding-right: 8px;
+  border-right: 1px solid rgba(233, 233, 237, 0.08);
+}
+
+.pref-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.25s, background-color 0.25s, opacity 0.25s;
+}
+
+.pref-toggle:hover {
+  color: var(--text-muted);
+  background-color: rgba(145, 132, 217, 0.08);
+}
+
+.pref-toggle:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pref-toggle:disabled:hover {
+  color: var(--text-dim);
+  background: none;
+}
+
+.pref-switch {
+  position: relative;
+  flex: none;
+  width: 22px;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(233, 233, 237, 0.18);
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.pref-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  transition: transform 0.25s var(--ease), background-color 0.25s;
+}
+
+.pref-toggle[aria-checked='true'] .pref-switch {
+  border-color: rgba(145, 132, 217, 0.6);
+  background-color: rgba(145, 132, 217, 0.16);
+}
+
+.pref-toggle[aria-checked='true'] .pref-switch::after {
+  transform: translateX(10px);
+  background-color: var(--accent-soft);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .pref-toggle-cursor {
+    display: none;
+  }
 }
 
 .nav-links a {
@@ -986,6 +1062,38 @@ main {
 @media (min-width: 1101px) {
   .hud {
     display: flex;
+  }
+}
+
+/* ---------- calm mode ---------- */
+
+html.is-calm {
+  scroll-behavior: auto;
+}
+
+.is-calm .fx-host {
+  background:
+    radial-gradient(60% 50% at 72% 45%, rgba(93, 82, 148, 0.26), transparent 70%),
+    radial-gradient(50% 40% at 18% 88%, rgba(66, 58, 106, 0.2), transparent 70%);
+}
+
+.is-calm .scroll-progress,
+.is-calm .hud,
+.is-calm .apps-meta {
+  display: none;
+}
+
+.is-calm .app-slot {
+  transition: none;
+}
+
+@media (min-width: 1200px) {
+  .is-calm .apps-track {
+    height: auto;
+  }
+
+  .is-calm .apps-sticky {
+    position: relative;
   }
 }
 

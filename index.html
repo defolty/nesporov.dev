@@ -22,7 +22,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20260929-2" />
+    <link rel="stylesheet" href="./styles.css?v=20260929-3" />
+    <script>
+      (function () {
+        var prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var storedMotion = null;
+        try {
+          storedMotion = localStorage.getItem('nes.motion');
+        } catch (error) {}
+        var isCalm = storedMotion ? storedMotion === 'off' : prefersReducedMotion;
+        if (isCalm) document.documentElement.classList.add('is-calm');
+      })();
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">skip to content</a>
@@ -35,6 +46,14 @@
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="#top" data-magnetic="0.25">nesporov.dev</a>
         <div class="nav-links">
+          <div class="nav-prefs" role="group" aria-label="Display preferences">
+            <button class="pref-toggle" type="button" role="switch" aria-checked="true" data-pref="motion" title="Animated background, scroll and pointer effects">
+              <span class="pref-switch" aria-hidden="true"></span>motion
+            </button>
+            <button class="pref-toggle pref-toggle-cursor" type="button" role="switch" aria-checked="true" data-pref="cursor" title="Custom cursor">
+              <span class="pref-switch" aria-hidden="true"></span>cursor
+            </button>
+          </div>
           <a href="#about" data-magnetic="0.3">about</a>
           <a href="#experience" data-magnetic="0.3">experience</a>
           <a href="#apps" data-magnetic="0.3">apps</a>
@@ -356,6 +375,6 @@
     </div>
 
     <script src="./nes-fx.js?v=20260929" defer></script>
-    <script src="./script.js?v=20260929" defer></script>
+    <script src="./script.js?v=20260929-2" defer></script>
   </body>
 </html>
