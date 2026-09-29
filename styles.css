@@ -946,6 +946,7 @@ main {
   display: flex;
   gap: 14px;
   width: max-content;
+  padding-right: 14px;
   will-change: transform;
 }
 
@@ -1085,6 +1086,24 @@ html.is-calm {
 
 .is-calm .app-slot {
   transition: none;
+}
+
+.is-calm .marquee {
+  animation: marquee-scroll 70s linear infinite;
+}
+
+.is-calm .marquee[data-marquee='-1'] {
+  animation-direction: reverse;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 @media (min-width: 1200px) {
