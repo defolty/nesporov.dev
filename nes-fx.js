@@ -543,7 +543,7 @@ void main(){
             let x = lerp(a.sx[i], pts[i * 2], e) + a.cu[i] * w * 0.4, y = lerp(a.sy[i], pts[i * 2 + 1], e) - a.cu[i] * w * 0.25;
             const u = 1 - e, ph = (i * 0.618034 % 1) * 6.283, fq = 0.5 + (i * 0.371 % 1) * 1.3;
             if (k === 1) { x += Math.sin(t * 1.3 + i) * 0.4; y += Math.cos(t * 1.1 + i * 1.7) * 0.4; }
-            else { x += Math.sin(t * fq * 0.45 + ph) * 16 * u; y += Math.cos(t * fq * 0.38 + ph * 1.3) * 12 * u; }
+            else { x += Math.sin(t * fq * 0.6 + ph) * 30 * u; y += Math.cos(t * fq * 0.5 + ph * 1.3) * 24 * u; }
             if (has) { const dx = x - mx, dy = y - my, d2 = dx * dx + dy * dy; if (d2 < R2 && d2 > 0.01) { const d = Math.sqrt(d2), f = (1 - d / R) * 22 * (0.4 + I()); x += dx / d * f; y += dy / d * f; } }
             let tw = 0.5 + 0.5 * Math.sin(t * fq * 1.4 + ph * 3.1); tw = tw * tw * tw;
             let al = k * (1 - u * (0.92 - 0.92 * tw));
