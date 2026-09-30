@@ -47,9 +47,19 @@
     });
   };
 
+  const displayFontReady = (() => {
+    if (!document.fonts || !document.fonts.load) return Promise.resolve();
+    const fontLoad = document.fonts.load("400 1em 'Audiowide'").catch(() => {});
+    const fontTimeout = new Promise((resolve) => setTimeout(resolve, 2500));
+    return Promise.race([fontLoad, fontTimeout]);
+  })();
+
   const startEffects = () => {
     if (fx || !window.NesFX || !fxHost) return;
-    fx = window.NesFX.mount(fxHost, { mode: 'liquid', intensity: 0.8, cursor: isCursorEnabled, dot: 'round' });
+    displayFontReady.then(() => {
+      if (fx || !isMotionEnabled) return;
+      fx = window.NesFX.mount(fxHost, { mode: 'liquid', intensity: 0.8, cursor: isCursorEnabled, dot: 'round' });
+    });
   };
 
   const stopEffects = () => {
