@@ -527,11 +527,11 @@ void main(){
         if (!a.cv || !a.n) return;
         const top = a.T - scrollY, bot = top + a.h;
         const cy = (top + a.h / 2) / vh, pin = clamp((1 - cy) / 0.22, 0, 1), pout = clamp((cy + 0.04) / 0.2, 0, 1), tg = Math.min(pin, pout);
-        a.p = lerp(a.p, tg, 1 - Math.exp(-dt * (a.init ? 14 : 2.2))); if (a.p > 0.97) a.init = true;
+        a.p = lerp(a.p, tg, 1 - Math.exp(-dt * (a.init ? 14 : 4.5))); if (a.p > 0.97) a.init = true;
         if (Math.abs(a.p - tg) < 0.002) a.p = tg;
         const on = top - APAD < vh && bot + APAD > 0;
         if (!on || (a.p === 0 && !tg)) { if (a.drawn) { a.c.clearRect(0, 0, a.cw, a.ch); a.drawn = false; } return; }
-        const c = a.c, n = a.n, pts = a.pts, sz = a.sz, hs = sz / 2, P = a.p * 1.6;
+        const c = a.c, n = a.n, pts = a.pts, sz = a.sz, hs = sz / 2, P = a.p * 1.8;
         const ox0 = a.L - APAD - scrollX, oy0 = a.T - APAD - scrollY, mx = M.sx - ox0, my = M.sy - oy0, has = M.sx > -1e3;
         const wv = []; for (const q of pulses) { const age = T - q.t; if (age >= 0 && age < 1.4) { const fd = 1 - age / 1.4; wv.push({ x: q.x - ox0, y: q.y - oy0, rw: age * 620, amp: 16 * fd * fd * (0.6 + 0.8 * I()) }); } }
         c.clearRect(0, 0, a.cw, a.ch); c.globalCompositeOperation = 'lighter'; a.drawn = true;
