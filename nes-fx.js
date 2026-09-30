@@ -526,7 +526,7 @@ void main(){
       AS.forEach(a => {
         if (!a.cv || !a.n) return;
         const top = a.T - scrollY, bot = top + a.h;
-        const cy = (top + a.h / 2) / vh, pin = clamp((1.02 - cy) / 0.4, 0, 1), pout = clamp((cy + 0.02) / 0.34, 0, 1), tg = Math.min(pin, pout);
+        const cy = (top + a.h / 2) / vh, pin = clamp((1 - cy) / 0.22, 0, 1), pout = clamp((cy + 0.04) / 0.2, 0, 1), tg = Math.min(pin, pout);
         a.p = lerp(a.p, tg, 1 - Math.exp(-dt * (a.init ? 14 : 2.2))); if (a.p > 0.97) a.init = true;
         if (Math.abs(a.p - tg) < 0.002) a.p = tg;
         const on = top - APAD < vh && bot + APAD > 0;
