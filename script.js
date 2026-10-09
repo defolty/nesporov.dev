@@ -1,6 +1,4 @@
 (function () {
-  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-
   const readPreference = (key) => {
     try {
       return localStorage.getItem(key);
@@ -90,7 +88,6 @@
     isMotionEnabled = !isMotionEnabled;
     writePreference('nes.motion', isMotionEnabled ? 'on' : 'off');
     applyPreferences();
-    updateApps();
   });
 
   cursorToggle?.addEventListener('click', () => {
@@ -100,59 +97,6 @@
   });
 
   applyPreferences();
-
-  const appsTrack = document.querySelector('[data-apps-track]');
-  const appSlots = appsTrack ? Array.from(appsTrack.querySelectorAll('[data-app-slot]')) : [];
-  const appsCounter = appsTrack ? appsTrack.querySelector('[data-apps-counter]') : null;
-  const wideLayout = matchMedia('(min-width: 1200px)');
-  const spreadThreshold = 0.62;
-  let activeIndex = -1;
-  let isSpread = null;
-
-  const setActiveApp = (index, spread) => {
-    if (index === activeIndex && spread === isSpread) return;
-    activeIndex = index;
-    isSpread = spread;
-    appSlots.forEach((slot, slotIndex) => slot.classList.toggle('is-active', spread && slotIndex === index));
-    if (appsCounter) appsCounter.textContent = String(index + 1).padStart(2, '0');
-    appsTrack.setAttribute('data-bg-shape', `app:${index}`);
-  };
-
-  const updateApps = () => {
-    if (!appsTrack || !appSlots.length) return;
-    const rect = appsTrack.getBoundingClientRect();
-    const viewportHeight = innerHeight;
-    const stackScale = Math.min(1, (innerWidth - 48) / 1500, (viewportHeight - 150) / 940);
-
-    if (!isMotionEnabled) {
-      appsTrack.style.setProperty('--ap', '1');
-      appsTrack.style.setProperty('--s', '1');
-      appsTrack.style.setProperty('--sc', stackScale.toFixed(3));
-      setActiveApp(0, false);
-      return;
-    }
-
-    if (!wideLayout.matches) {
-      const unfoldRange = Math.max(1, viewportHeight * 0.6);
-      appsTrack.style.setProperty('--s', clamp((viewportHeight * 0.85 - rect.top) / unfoldRange, 0, 1).toFixed(4));
-      setActiveApp(0, false);
-      return;
-    }
-
-    const scrollSpan = Math.max(1, rect.height - viewportHeight);
-    const progress = clamp(-rect.top / scrollSpan, 0, 1);
-    appsTrack.style.setProperty('--ap', progress.toFixed(4));
-    appsTrack.style.setProperty('--sc', stackScale.toFixed(3));
-
-    const spread = progress > spreadThreshold;
-    const spreadProgress = (progress - spreadThreshold) / (1 - spreadThreshold);
-    const index = spread ? Math.min(appSlots.length - 1, Math.floor(spreadProgress * appSlots.length)) : 0;
-    setActiveApp(index, spread);
-  };
-
-  addEventListener('scroll', updateApps, { passive: true });
-  addEventListener('resize', updateApps);
-  updateApps();
 
   const copyEmailButton = document.getElementById('copyEmailButton');
   const emailStatus = document.getElementById('emailStatus');

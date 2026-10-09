@@ -641,13 +641,7 @@ main {
 }
 
 .apps-track {
-  --ap: 1;
-  --s: 1;
   position: relative;
-}
-
-.apps-meta {
-  display: none;
 }
 
 .apps-stack {
@@ -660,9 +654,7 @@ main {
 }
 
 .app-slot {
-  position: relative;
-  transform: translateY(calc((1 - var(--s)) * var(--i) * (-100% - 4px))) scale(calc(1 - (1 - var(--s)) * var(--i) * 0.03));
-  transition: transform 0.45s var(--ease);
+  display: grid;
 }
 
 .app-card {
@@ -775,59 +767,19 @@ main {
   border-color: var(--accent);
 }
 
-@media (min-width: 1200px) {
-  .apps-track {
-    height: 400vh;
-  }
-
-  .apps-sticky {
-    position: sticky;
-    top: 0;
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .apps-meta {
-    position: absolute;
-    top: 84px;
-    left: var(--gutter);
-    right: var(--gutter);
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    font-size: 12px;
-    color: var(--text-dim);
-  }
-
+@media (min-width: 760px) {
   .apps-stack {
-    --s: clamp(0, calc(var(--ap, 0) * 1.6), 1);
-    position: relative;
-    display: block;
-    width: 350px;
-    max-width: none;
-    height: 440px;
-    margin: 40px 0 0;
-    padding: 0;
-    transform: scale(var(--sc, 1)) perspective(1400px) rotateX(calc((1 - var(--s)) * 24deg));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 1100px;
   }
+}
 
-  .app-slot {
-    position: absolute;
-    inset: 0;
-    transform:
-      translate3d(
-        calc((var(--col) - 1.5) * var(--s) * 370px),
-        calc((var(--row) - 0.5) * var(--s) * 464px + (1 - var(--s)) * var(--i) * 14px + var(--lift, 0px)),
-        0
-      )
-      scale(calc(1 - (1 - var(--s)) * var(--i) * 0.03));
-    transition: transform 0.5s var(--ease);
-  }
-
-  .app-slot.is-active {
-    --lift: -14px;
+@media (min-width: 1200px) {
+  .apps-stack {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1520px;
+    padding: 2vh var(--gutter) 14vh;
   }
 
   .app-card {
@@ -836,7 +788,7 @@ main {
     grid-template-rows: auto 1fr;
     align-content: start;
     gap: 12px;
-    height: 100%;
+    min-height: 440px;
     padding: 26px;
     border-radius: 28px;
     background:
@@ -844,10 +796,6 @@ main {
       linear-gradient(160deg, rgba(50, 53, 70, 0.94), rgba(28, 30, 42, 0.96));
     box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
     transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-  }
-
-  .app-slot.is-active .app-card {
-    border-color: rgba(181, 171, 252, 0.6);
   }
 
   .app-card-head {
@@ -879,7 +827,7 @@ main {
   }
 
   .app-card-title h3 {
-    font-size: 34px;
+    font-size: clamp(26px, 2.2vw, 34px);
     font-weight: 500;
     letter-spacing: -0.035em;
   }
@@ -1079,13 +1027,8 @@ html.is-calm {
 }
 
 .is-calm .scroll-progress,
-.is-calm .hud,
-.is-calm .apps-meta {
+.is-calm .hud {
   display: none;
-}
-
-.is-calm .app-slot {
-  transition: none;
 }
 
 .is-calm .marquee {
@@ -1106,22 +1049,8 @@ html.is-calm {
   }
 }
 
-@media (min-width: 1200px) {
-  .is-calm .apps-track {
-    height: auto;
-  }
-
-  .is-calm .apps-sticky {
-    position: relative;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .app-slot {
-    transition: none;
   }
 }
