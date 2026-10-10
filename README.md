@@ -28,7 +28,7 @@ This repository contains the source code for [nesporov.dev](https://nesporov.dev
 | App | Status | Platform | Links |
 | --- | --- | --- | --- |
 | Monefic | Live | iOS | [App Store](https://apps.apple.com/am/app/monefic/id6792517737), Privacy: `/apps/monefic/privacy-policy.html`, Support: `/apps/monefic/support.html` |
-| Calendarity | Live | iOS | [Website](https://calendarity.app), [App Store](https://apps.apple.com/us/app/calendarity/id6747371890) |
+| Calendarity | Live | iOS | [App Store](https://apps.apple.com/us/app/calendarity/id6747371890), Page: `/apps/calendarity/`, Privacy: `/apps/calendarity/privacy-policy.html`, Terms: `/apps/calendarity/terms-of-use.html`, Support: `/apps/calendarity/support.html` |
 | Bassport Pro | Live | iOS | Privacy: `/apps/bassport-pro/privacy-policy.html`, Support: `/apps/bassport-pro/support.html` |
 | Bassport | Legacy | iOS | [App Store](https://apps.apple.com/am/app/bassport/id1573554303) |
 | Calendar Workdays | Legacy | iOS | [App Store](https://apps.apple.com/us/app/calendar-workdays/id6475014070) |

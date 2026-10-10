@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendarity — shared shift calendar for couples</title>
+    <meta
+      name="description"
+      content="Calendarity puts your and your partner's work shifts in one shared calendar — compare schedules, find common days off, and plan weekends together."
+    />
+    <link rel="canonical" href="https://nesporov.dev/apps/calendarity/" />
+    <meta property="og:title" content="Calendarity — shared shift calendar for couples" />
+    <meta property="og:description" content="Your and your partner's work shifts in one shared calendar." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nesporov.dev/apps/calendarity/" />
+    <meta property="og:image" content="https://nesporov.dev/apps/app-icons/calendarity.png" />
+    <meta name="theme-color" content="#161826" />
+    <link rel="icon" type="image/png" href="../app-icons/calendarity.png?v=20260713" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../app-icons/calendarity.png?v=20260713" />
+    <link rel="preload" href="../../Audiowide/Audiowide-Regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles.css?v=20261010" />
+    <link rel="stylesheet" href="./calendarity.css?v=20261010-3" />
+    <script>
+      (function () {
+        var prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var storedMotion = null;
+        try {
+          storedMotion = localStorage.getItem('nes.motion');
+        } catch (error) {}
+        var isCalm = storedMotion ? storedMotion === 'off' : prefersReducedMotion;
+        if (isCalm) document.documentElement.classList.add('is-calm');
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">skip to content</a>
+
+    <div class="page" id="top">
+      <div class="fx-host" data-fx-host aria-hidden="true"></div>
+      <div class="fx-shade" aria-hidden="true"></div>
+      <div class="scroll-progress" data-progress aria-hidden="true"></div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="/" data-magnetic="0.25">nesporov.dev</a>
+        <div class="nav-links">
+          <div class="nav-prefs" role="group" aria-label="Display preferences">
+            <button class="pref-toggle" type="button" role="switch" aria-checked="true" data-pref="motion" title="Animated background, scroll and pointer effects">
+              <span class="pref-switch" aria-hidden="true"></span>motion
+            </button>
+            <button class="pref-toggle pref-toggle-cursor" type="button" role="switch" aria-checked="true" data-pref="cursor" title="Custom cursor">
+              <span class="pref-switch" aria-hidden="true"></span>cursor
+            </button>
+          </div>
+          <a href="#features" data-magnetic="0.3">features</a>
+          <a href="#screens" data-magnetic="0.3">screens</a>
+          <a href="#download" data-magnetic="0.3">download</a>
+          <a href="./support.html" data-magnetic="0.3">support</a>
+        </div>
+      </nav>
+
+      <main id="main">
+        <section class="hero app-hero" data-bg-shape="app:0" aria-labelledby="hero-title">
+          <div class="hero-kicker" data-reveal>
+            <a class="app-hero-back" href="/#apps" data-magnetic="0.3">← apps</a>
+            <span class="section-label">// ios · productivity · calendar</span>
+          </div>
+          <div class="app-hero-head">
+            <img class="app-hero-icon" src="../app-icons/calendarity.png?v=20260713" alt="Calendarity app icon" width="112" height="112" data-reveal />
+            <h1 class="hero-title app-hero-title" id="hero-title" data-reveal data-reveal-delay="0.08">calendarity</h1>
+          </div>
+          <p class="hero-description app-hero-description" data-reveal data-reveal-delay="0.2">
+            Shared calendar for couples who work shifts. Put both schedules side by side and see at a glance when you can be together.
+          </p>
+          <div class="button-row" data-reveal data-reveal-delay="0.3">
+            <a class="btn btn-primary" href="https://apps.apple.com/us/app/calendarity/id6747371890" target="_blank" rel="noopener noreferrer" data-magnetic="0.35" data-cursor="get">App Store <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary" href="#features" data-magnetic="0.35">features <span aria-hidden="true">↓</span></a>
+          </div>
+          <span class="status status-released app-hero-status" data-reveal data-reveal-delay="0.36">released · iPhone &amp; iPad</span>
+        </section>
+
+        <section class="section app-intro" id="features" data-bg-shape="sphere" aria-labelledby="features-title">
+          <span class="section-label" id="features-title" data-reveal>// features</span>
+          <div class="about-copy">
+            <p class="fill-text fill-text-lead" data-fill>
+              Built for partners with irregular hours — <span class="accent">day shifts, night shifts</span>, or any custom schedule.
+            </p>
+            <p class="fill-text" data-fill>
+              Set up your shifts once, share them in one combined calendar, and stop guessing when you are both free.
+            </p>
+          </div>
+          <ul class="highlights app-features">
+            <li class="glass-card" data-reveal data-spot>
+              <span class="highlight-index">01</span>
+              <h3 class="app-feature-title">Customizable shifts</h3>
+              <span>Define your schedule for every day of the month — day shifts, night shifts, or any hours — and edit it as plans change.</span>
+            </li>
+            <li class="glass-card" data-reveal data-reveal-delay="0.08" data-spot>
+              <span class="highlight-index">02</span>
+              <h3 class="app-feature-title">Shared calendar</h3>
+              <span>See your schedule and your partner's side by side in one unified calendar and quickly spot who works when.</span>
+            </li>
+            <li class="glass-card" data-reveal data-reveal-delay="0.16" data-spot>
+              <span class="highlight-index">03</span>
+              <h3 class="app-feature-title">Detailed statistics</h3>
+              <span>Breakdowns of hours and shifts for weekdays and weekends, with totals for each partner.</span>
+            </li>
+            <li class="glass-card" data-reveal data-spot>
+              <span class="highlight-index">04</span>
+              <h3 class="app-feature-title">Schedule comparison</h3>
+              <span>Find the days you both work, or both have off, and highlight overlapping hours or free time.</span>
+            </li>
+            <li class="glass-card" data-reveal data-reveal-delay="0.08" data-spot>
+              <span class="highlight-index">05</span>
+              <h3 class="app-feature-title">Weekend planner</h3>
+              <span>See at a glance when you are both free on weekends — perfect for planning trips or simply resting together.</span>
+            </li>
+            <li class="glass-card" data-reveal data-reveal-delay="0.16" data-spot>
+              <span class="highlight-index">06</span>
+              <h3 class="app-feature-title">Simple by design</h3>
+              <span>A clean native interface: add or change shifts anytime and the calendar updates automatically.</span>
+            </li>
+          </ul>
+          <p class="about-note" data-reveal>
+            For shift workers, healthcare professionals, parents, and anyone with changing schedules who wants to stay connected.
+          </p>
+        </section>
+
+        <section class="app-screens" id="screens" data-bg-shape="app:1" aria-labelledby="screens-title">
+          <div class="apps-heading">
+            <span class="section-label" data-reveal>// screens</span>
+            <h2 class="display-title" id="screens-title" data-reveal>two schedules, one view</h2>
+          </div>
+          <ol class="app-screens-track" aria-label="Calendarity screenshots">
+            <li class="app-screen" data-reveal>
+              <img src="./screenshots/screenshot-1.jpg" alt="Combined calendar with both partners' shifts for each day" width="660" height="1434" loading="lazy" decoding="async" />
+            </li>
+            <li class="app-screen" data-reveal data-reveal-delay="0.08">
+              <img src="./screenshots/screenshot-2.jpg" alt="Shift pattern settings for each partner: work days, rest days, and night shifts" width="660" height="1434" loading="lazy" decoding="async" />
+            </li>
+            <li class="app-screen" data-reveal data-reveal-delay="0.16">
+              <img src="./screenshots/screenshot-3.jpg" alt="Detailed statistics with overlapping work and rest days" width="660" height="1434" loading="lazy" decoding="async" />
+            </li>
+            <li class="app-screen" data-reveal data-reveal-delay="0.24">
+              <img src="./screenshots/screenshot-4.jpg" alt="Calendar of overlapping rest days on weekends" width="660" height="1434" loading="lazy" decoding="async" />
+            </li>
+            <li class="app-screen" data-reveal data-reveal-delay="0.32">
+              <img src="./screenshots/screenshot-5.jpg" alt="Settings with names and colors for each partner" width="660" height="1434" loading="lazy" decoding="async" />
+            </li>
+          </ol>
+        </section>
+
+        <section class="contact app-download" id="download" data-bg-shape="text:hi" aria-labelledby="download-title">
+          <span class="section-label" data-reveal>// download</span>
+          <h2 class="display-title contact-title" id="download-title" data-reveal>plan your time as a team</h2>
+          <p class="contact-description" data-reveal>Calendarity is available on the App Store for iPhone and iPad. Questions or ideas? Reach out at support@nesporov.dev.</p>
+          <div class="button-row" data-reveal>
+            <a class="btn btn-primary btn-large" href="https://apps.apple.com/us/app/calendarity/id6747371890" target="_blank" rel="noopener noreferrer" data-magnetic="0.4" data-cursor="get">App Store <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary btn-large" href="./support.html" data-magnetic="0.4">support</a>
+          </div>
+          <footer class="footer">
+            <span>© 2026 Nikita Nesporov. All rights reserved.</span>
+            <span class="app-footer-links">
+              <a href="./privacy-policy.html">privacy policy</a>
+              <a href="./terms-of-use.html">terms of service</a>
+              <a href="./support.html">support</a>
+              <a href="/">nesporov.dev</a>
+            </span>
+          </footer>
+        </section>
+      </main>
+
+      <div class="hud" aria-hidden="true">
+        <span>x <span data-hud="x">----</span></span>
+        <span>y <span data-hud="y">----</span></span>
+        <span>scroll <span data-hud="s">000%</span></span>
+      </div>
+    </div>
+
+    <script src="../../nes-fx.js?v=20260930-3" defer></script>
+    <script src="../../script.js?v=20261009" defer></script>
+  </body>
+</html>

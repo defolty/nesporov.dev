@@ -671,6 +671,43 @@ main {
   transition: border-color 0.4s;
 }
 
+.app-card:has(.app-card-link) {
+  position: relative;
+}
+
+.app-card:has(.app-card-link):hover {
+  border-color: rgba(181, 171, 252, 0.45);
+}
+
+.app-card:has(.app-card-link:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.app-card-link {
+  color: inherit;
+}
+
+.app-card-link:hover {
+  color: var(--text-strong);
+}
+
+.app-card-link:focus-visible {
+  outline: none;
+}
+
+.app-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.app-card:has(.app-card-link) .app-card-links {
+  position: relative;
+  z-index: 2;
+}
+
 .app-card-head {
   display: flex;
   align-items: center;
