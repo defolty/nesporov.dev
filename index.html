@@ -13,7 +13,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nesporov.dev" />
     <meta property="og:image" content="https://nesporov.dev/og-image.svg" />
-    <meta name="theme-color" content="#161826" />
+    <meta name="theme-color" content="#080808" />
     <link rel="icon" type="image/png" sizes="16x16" href="./n_logo.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./n_logo.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./n_logo.png" />
@@ -22,16 +22,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20261010" />
+    <link rel="stylesheet" href="./styles.css?v=20261028-2" />
     <script>
       (function () {
-        var prefersReducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var storedMotion = null;
-        try {
-          storedMotion = localStorage.getItem('nes.motion');
-        } catch (error) {}
-        var isCalm = storedMotion ? storedMotion === 'off' : prefersReducedMotion;
-        if (isCalm) document.documentElement.classList.add('is-calm');
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('is-calm');
+        }
       })();
     </script>
   </head>
@@ -47,9 +43,6 @@
         <a class="brand" href="#top" data-magnetic="0.25">nesporov.dev</a>
         <div class="nav-links">
           <div class="nav-prefs" role="group" aria-label="Display preferences">
-            <button class="pref-toggle" type="button" role="switch" aria-checked="true" data-pref="motion" title="Animated background, scroll and pointer effects">
-              <span class="pref-switch" aria-hidden="true"></span>motion
-            </button>
             <button class="pref-toggle pref-toggle-cursor" type="button" role="switch" aria-checked="true" data-pref="cursor" title="Custom cursor">
               <span class="pref-switch" aria-hidden="true"></span>cursor
             </button>
@@ -67,7 +60,7 @@
           <div class="hero-kicker" data-reveal>
             <span class="hero-mark" aria-hidden="true">
               <svg viewBox="0 0 120 90" width="24" height="18">
-                <g fill="#d2cefd">
+                <g fill="currentColor">
                   <rect x="0" y="0" width="30" height="90"></rect>
                   <polygon points="15,0 38,0 105,90 82,90"></polygon>
                   <rect x="95" y="0" width="25" height="68"></rect>
@@ -76,7 +69,7 @@
             </span>
             <span class="section-label">// mobile development</span>
           </div>
-          <h1 class="hero-title" id="hero-title" data-cursor="hover" aria-label="nikita nesporov">
+          <h1 class="hero-title" id="hero-title" aria-label="nikita nesporov">
             <span class="hero-line" aria-hidden="true"><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.05">n</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.08">i</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.11">k</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.14">i</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.17">t</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.2">a</span></span>
             <span class="hero-line" aria-hidden="true"><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.22">n</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.25">e</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.28">s</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.31">p</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.34">o</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.37">r</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.4">o</span><span data-letter data-reveal data-reveal-y="0.5em" data-reveal-delay="0.43">v</span></span>
           </h1>
@@ -128,15 +121,15 @@
           <span class="section-label" id="experience-title" data-reveal>// experience</span>
           <div class="stats">
             <div class="stat" data-reveal>
-              <span class="stat-value" data-particles>5M+</span>
+              <span class="stat-value">5M+</span>
               <span class="stat-caption">monthly users</span>
             </div>
             <div class="stat" data-reveal data-reveal-delay="0.1">
-              <span class="stat-value" data-particles>5</span>
+              <span class="stat-value">5</span>
               <span class="stat-caption">apps on the App Store</span>
             </div>
             <div class="stat" data-reveal data-reveal-delay="0.2">
-              <span class="stat-value" data-particles>EU</span>
+              <span class="stat-value">EU</span>
               <span class="stat-caption">multiple European markets</span>
             </div>
           </div>
@@ -370,7 +363,7 @@
       </div>
     </div>
 
-    <script src="./nes-fx.js?v=20260930-3" defer></script>
-    <script src="./script.js?v=20261009" defer></script>
+    <script src="./nes-fx.js?v=20261028-5" defer></script>
+    <script src="./script.js?v=20261028" defer></script>
   </body>
 </html>
