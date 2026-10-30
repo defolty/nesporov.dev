@@ -655,7 +655,7 @@ main {
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
-  padding: 2vh 5vw 10vh;
+  padding: 2vh 5vw 32px;
 }
 
 .app-slot {
@@ -813,19 +813,82 @@ main {
   border-color: var(--accent);
 }
 
+.legacy-apps {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 5vw 10vh;
+}
+
+.legacy-apps-list {
+  display: grid;
+  gap: 12px;
+}
+
+.legacy-app {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: rgba(22, 22, 22, 0.82);
+}
+
+.legacy-app-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.legacy-app-title {
+  display: grid;
+  gap: 4px;
+}
+
+.legacy-app-title h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.legacy-app-title p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-subtle);
+}
+
+.legacy-app-links {
+  grid-column: 1 / -1;
+}
+
 @media (min-width: 760px) {
-  .apps-stack {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .apps-stack,
+  .legacy-apps {
     max-width: 1100px;
+  }
+
+  .apps-stack,
+  .legacy-apps-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1200px) {
   .apps-stack {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
     max-width: 1520px;
-    padding: 2vh var(--gutter) 14vh;
+    padding: 2vh var(--gutter) 32px;
+  }
+
+  .legacy-apps {
+    max-width: 1520px;
+    padding: 0 var(--gutter) 14vh;
   }
 
   .app-card {
