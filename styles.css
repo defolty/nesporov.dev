@@ -662,6 +662,10 @@ main {
   display: grid;
 }
 
+.app-slot[hidden] {
+  display: none;
+}
+
 .app-card {
   display: flex;
   flex-direction: column;
